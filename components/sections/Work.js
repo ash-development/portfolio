@@ -19,7 +19,7 @@ const ColumnOne = () => {
       <div className="flex flex-col justify-between h-full">
         <div>
           <Text className="text-2xl xl:text-5xl">
-            overall, i just have a passion for photography!<br/>i'd love to work
+            overall, i just have a passion for photography!<br/>id love to work
               together<br/>and help bring your vision to life.
           </Text>
           <div className="flex mt-4 gap-x-1">

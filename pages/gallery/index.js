@@ -168,7 +168,7 @@ const Gallery = ({ images }) => {
           <Heading>Gallery</Heading>
           <div>
             <p className="text-sm mb-2">
-              welcome to my portfolio! here you'll find all the photos i'm proud of, from all different categories. use the buttons below to filter!
+              welcome to my portfolio! here youll find all the photos im proud of, from all different categories. use the buttons below to filter!
             </p>
             <div className="flex gap-0.5 flex-wrap">
               {FILTERS.map(({ filter, type, title }) => (
