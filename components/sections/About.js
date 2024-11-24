@@ -1,7 +1,7 @@
 import { Button, Tooltip, Marquee, Image } from "@components";
 import { ArrowRight } from "phosphor-react";
 import NextLink from "next/link";
-import idx_me from "../../public/images/man-standing-in-montreal-metro.jpg";
+import idx_me from "../../public/images/ashie/selfie.JPEG";
 
 const About = () => {
   return (
@@ -11,7 +11,7 @@ const About = () => {
           <Marquee />
           <Image
             src={idx_me}
-            alt="A futuristic, cinematic photo of myself standing in front of blue tinted lights in the Montreal metro, wearing a red jacket"
+            alt="a selfie of me :D"
             height="md:order-first aspect-square md:h-img max-h-[900px]"
           />
         </div>
@@ -22,18 +22,13 @@ const About = () => {
           </div>
 
           <p className="mb-4 text-2xl xl:text-5xl">
-            Typical
-            <Tooltip text="No, not actually my first name">
-              <span className="font-light text-stone">*</span>
-            </Tooltip>
-            Mitul is a photographer based in Toronto, Canada dedicated to
-            defining <b className="font-mtl-bold">thoughtful</b> and{" "}
-            <b className="font-mtl-bold">memorable experiences</b> through every
-            capture.
+            <b className="font-mtl-bold">ash</b> is a student photographer based in montclair, new jersey
+            dedicated to <b className="font-mtl-bold">creative</b> and <b className="font-mtl-bold">thoughtful</b> concert
+            photography.
           </p>
           <NextLink href="/about" passHref>
             <Button asAnchor>
-              <span>Get to know me</span>
+              <span>find out more about me!</span>
               <ArrowRight />
             </Button>
           </NextLink>

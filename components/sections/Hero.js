@@ -2,6 +2,7 @@ import NextImage from "next/image";
 import { motion } from "framer-motion";
 import { useIsSmall } from "@/hooks/useBreakpoint";
 import nyc_lookdown from "../../public/images/new-york-city-lookdown.jpg";
+import mtlckBG from "../../public/images/ashie/meatlocker BG.jpg";
 
 const Hero = () => {
   const isSmall = useIsSmall();
@@ -26,7 +27,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            Capturing the world <br /> and chasing life
+            hi! 👋 i'm ash
           </motion.h1>
         </div>
         <motion.div
@@ -36,11 +37,11 @@ const Hero = () => {
           transition={{ delay: 1.4, duration: 0.7 }}
         >
           <NextImage
-            src={nyc_lookdown}
+            src={mtlckBG}
             layout="fill"
             objectFit="cover"
             priority
-            alt="Photo of New York City streets filled with yellow taxi cabs, taken from on top of a building with a reflection of the streets."
+            alt="a photo of a wall with a bunch of diferent stickers and graffitti"
             quality={5}
           />
         </motion.div>

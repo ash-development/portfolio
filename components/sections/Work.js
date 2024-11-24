@@ -3,6 +3,7 @@ import NextImage from "next/image";
 import delta from "../../public/images/delta.jpg";
 import uber_team from "../../public/images/uber_team.jpg";
 import shopify from "../../public/images/shopify.jpg";
+import wmsc from "../../public/images/ashie/meatlocker BG.jpg";
 
 const ColumnOne = () => {
 
@@ -18,19 +19,14 @@ const ColumnOne = () => {
       <div className="flex flex-col justify-between h-full">
         <div>
           <Text className="text-2xl xl:text-5xl">
-            At the centre of everything I do rests the power of storytelling.
-            Through the years, I have been lucky to work alongside countless
-            brands and companies to craft an impactful story through my photos.
+            overall, i just have a passion for photography!<br/>i'd love to work
+              together<br/>and help bring your vision to life.
           </Text>
-          <p className="w-full mt-2 text-md xl:text-2xl sm:w-2/3 text-dark/50">
-            Photography revolves around my trips and adventures. From brand
-            shoots to licensing, I would be honoured to provide creative pieces
-            that work for you.
-          </p>
           <div className="flex mt-4 gap-x-1">
-            <Tag>Photography</Tag>
-            <Tag>Licensing</Tag>
-            <Tag>Branding</Tag>
+            <Tag>concerts</Tag>
+            <Tag>nature</Tag>
+            <Tag>portraits</Tag>
+              <Tag>and more!</Tag>
           </div>
         </div>
       </div>
@@ -66,9 +62,9 @@ const Work = () => {
         <h2 className="text-dark">Work</h2>
       </div>
       <div className="grid grid-flow-col pl-6 pr-6 -mx-6 overflow-x-auto gap-x-yeat auto-cols-custom md:auto-cols-auto sm:mx-0 sm:px-0">
-        <ImageLayout src={shopify} alt="" logoAlt="Shopify logo"  logo="/images/logos/shopify-logo.png" />
-        <ImageLayout src={uber_team}  alt="" logoAlt="Uber logo" logo="/images/logos/uber-logo.png" />
-        <ImageLayout src={delta} alt="" logoAlt="Delta Hotels logo"  logo="/images/logos/delta-hotels-logo.png" className="brightness-0 invert" />
+        <ImageLayout src={wmsc} alt="" logoAlt="WMSC logo"  logo="/images/ashie/wmsc.png" />
+          <ImageLayout src={wmsc} alt="" logoAlt="WMSC logo"  logo="/images/ashie/wmsc.png" />
+          <ImageLayout src={wmsc} alt="" logoAlt="WMSC logo"  logo="/images/ashie/wmsc.png" />
       </div>
       <ColumnOne />
     </div>

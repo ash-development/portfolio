@@ -17,15 +17,13 @@ const Section = ({ className, children }) => {
 export default function Home() {
   return (
     <>
-      <WebPageJsonLd name="Typical Mitul" url="https://www.typicalmitul.com" />
+      <WebPageJsonLd name="ash schnoor" url="https://ashie.lol" />
       <SocialProfileJsonLd
         type="Person"
-        name="Typical Mitul"
-        url="http://www.typicalmitul.com"
+        name="ash schnoor"
+        url="https://ashie.lol"
         sameAs={[
-          "http://www.facebook.com/typicalmitul",
-          "http://instagram.com/typicalmitul",
-          "http://www.twitter.com/typicalmitul",
+          "http://instagram.com/underscoreashie",
         ]}
       />
       <Script src="/getHeight.js"></Script>
@@ -42,7 +40,6 @@ export default function Home() {
         <Section>
           <Work />
         </Section>
-        <CallToAction />
         <Break />
         <section className="h-full">
           <Contact />

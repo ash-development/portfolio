@@ -3,11 +3,7 @@ import splitbee from "@splitbee/web";
 const Footer = () => {
   const footerLinks = [
     {
-      href: "https://www.twitter.com/typicalmitul",
-      text: "Twitter",
-    },
-    {
-      href: "https://www.instagram.com/typicalmitul",
+      href: "https://www.instagram.com/underscoreashie",
       text: "Instagram",
     },
     // {
@@ -15,7 +11,7 @@ const Footer = () => {
     //   text: "500px",
     // },
     {
-      href: "mailto:typicalmitul@gmail.com",
+      href: "me@ashie.lol",
       text: "Mail",
     },
   ];
@@ -47,8 +43,7 @@ const Footer = () => {
         ))}
       </ul>
       <div className="mt-4 text-xs max-w-prose text-stone-blue">
-        This website was designed and built by myself, lots of water and good
-        vibes. <br /> You can also visit the{" "}
+        Source code can be found {" "}
         <a
           href="https://github.com/mitul-s/typicalmitul.com"
           onClick={() =>
@@ -60,9 +55,9 @@ const Footer = () => {
           rel="noreferrer"
           className="underline underline-offset-2"
         >
-          GitHub repo
+          here
         </a>
-        .
+        . All rights reserved.
       </div>
     </footer>
   );

@@ -12,21 +12,14 @@ const NotSure = () => {
       {/* <div className="text-stone">Other places:</div> */}
       <div className="flex gap-x-2">
         <a
-          href=""
-          target="_blank"
-          className="border bg-eggshell rounded px-2 py-1.5 shadow-sm transition betterhover:hover:bg-yolk/20 betterhover:hover:border-yolk betterhover:hover:shadow"
-        >
-          Twitter
-        </a>
-        <a
-          href=""
+          href="https://instagram.com/underscoreashie"
           target="_blank"
           className="border bg-eggshell rounded px-2 py-1.5 shadow-sm transition betterhover:hover:bg-yolk/20 betterhover:hover:border-yolk betterhover:hover:shadow"
         >
           Instagram
         </a>
         <a
-          href=""
+          href="mailto:me@ashie.lol"
           target="_blank"
           className="border bg-eggshell rounded px-2 py-1.5 shadow-sm transition betterhover:hover:bg-yolk/20 betterhover:hover:border-yolk betterhover:hover:shadow"
         >
@@ -127,7 +120,7 @@ const Contact = () => {
               <h2>Contact</h2>
             </div>
             <Text>
-              {`Let's talk! I'd love to hear from you and work together. I'm open to all inquires. Shoot over any questions you may have and I'll get back to you as soon as I can.`}
+              {`i'd love to chat and possibly work together! feel free to contact me about any inquiries <3 you can email me, or use the form to the right.`}
             </Text>
           </div>
           <div className="pl-6 md:pl-0 lg:place-self-center">
@@ -138,7 +131,7 @@ const Contact = () => {
               className="sm:py-1.5 text-lg normal-case md:text-2xl"
               onClick={copy}
             >
-              typicalmitul<span className="hidden">null</span>@gmail.com
+              me<span className="hidden">null</span>@ashie.lol
             </Button>
           </div>
           <div className="flex flex-col justify-end col-span-1 p-6 -mt-10 md:pl-4 md:border-l">

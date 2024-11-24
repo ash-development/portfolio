@@ -23,28 +23,28 @@ const MyApp = ({ Component, pageProps }) => {
           <Layout>
             <DefaultSeo
               title={undefined}
-              titleTemplate="%s | Typical Mitul"
-              defaultTitle="Typical Mitul | Toronto Photographer for Hire"
-              description="Photographer based in Toronto, Canada specializing in cityscapes, architecture and portraits."
-              canonical="https://typicalmitul.com"
+              titleTemplate="%s | ash schnoor"
+              defaultTitle="ash schnoor | student concert photographer"
+              description="based in montclair, new jersey"
+              canonical="https://ashie.lol"
               twitter={{
-                handle: "@typicalmitul",
-                site: "@typicalmitul",
+                handle: "@underscoreashie",
+                site: "@underscoreashie",
                 cardType: "summary_large_image",
               }}
               openGraph={{
                 type: "website",
                 locale: "en_CA",
-                url: "https://typicalmitul.com",
-                title: "Typical Mitul | Toronto Photographer for Hire",
+                url: "https://ashie.lol",
+                title: "ash schnoor | student concert photographer",
                 description:
-                  "Photographer based in Toronto, Canada specializing in cityscapes, architecture and portraits.",
+                  "based in montclair, new jersey",
                 images: [
                   {
                     url: "https://typicalmitul.com/images/og.png",
                     width: 1200,
                     height: 630,
-                    alt: "Typical Mitul | Toronto Photographer for Hire",
+                    alt: "ash schnoor | student concert photographer",
                     type: "image/png",
                   },
                 ],

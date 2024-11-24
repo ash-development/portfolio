@@ -83,7 +83,7 @@ const Navigation = () => {
           <NavigationMenu.Item className="mr-auto">
             <NextLink href="/" passHref>
               <NavigationMenu.Link className="text-xl font-mtl-bold">
-                Typical Mitul
+                ash schnoor
               </NavigationMenu.Link>
             </NextLink>
           </NavigationMenu.Item>
@@ -94,18 +94,6 @@ const Navigation = () => {
               </NavigationLink>
             );
           })}
-          <NavigationMenu.Item>
-            <NextLink href="/montreal-in-motion" passHref>
-              <NavigationMenu.Link
-                className={cx(
-                  navigationLink({ intent: "desktop" }),
-                  "relative sm:!flex after:content-['New!'] after:ml-1 items-center after:h-fit after:bg-yolk after:text-xs after:p-0.5 after:rounded-sm after:shadow-sm"
-                )}
-              >
-                Montreal Metro
-              </NavigationMenu.Link>
-            </NextLink>
-          </NavigationMenu.Item>
           <NavigationMenu.Item>
             <NavigationMenu.Trigger
               className={navigationLink({ intent: "desktop" })}
