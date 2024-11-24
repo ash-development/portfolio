@@ -15,90 +15,41 @@ import heart_lake from "@/images/gear/drone-photo-of-heart-lake.jpg";
 import sony35 from "@/images/gear/sony-35mm-gm.png";
 import Footer from "@/components/sections/Footer";
 import { cx } from "class-variance-authority";
+import r50 from "@/images/ashie/R50.webp";
+import shit from "@/images/ashie/mainlens.webp";
 
 const gear_data = {
   camera: [
     {
       heading: "Camera Body",
-      title: "Sony Alpha 7C",
+      title: "Canon EOS R50",
       longTitle:
-        "Sony Alpha 7C Full-Frame Mirrorless Interchangeable-Lens Camera",
+        "Canon EOS R50 4k Mirrorless Interchangeable-Lens Camera",
       subtitle: "The smallest full-frame camera out there, and it’s perfect.",
       shortDesc: "Something something something something something something",
       description:
-        "The Sony A7C has incredible autofocus so you never miss a shot, and as with any Sony camera, you can shoot the ISO through the roof without a sweat. It has a great rangefinder inspired design, and although the viewfinder is on the smaller side, I’ve never had an issue with it.",
-      href: "https://amzn.to/3LSzKUY",
-      image: sonyA7C,
+        "The EOS R50 camera makes photography fun, simple, and convenient with intuitive photo functions that capture beautiful images automatically, just as you imagine them.",
+      href: "https://amzn.to/4fJGEKm",
+      image: r50,
       imageAlt: "",
-      tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
+      tags: ["Canon", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
     },
   ],
   lenses: [
     {
       heading: "Lens",
-      title: "Sigma 24-70mm f/2.8",
-      longTitle: "Sigma 24-70mm f/2.8 DG DN Art Lens for Sony E-Mount Cameras",
+      title: "EF-S 18-55mm f/3.5-5.6",
+      longTitle: "EF-S 18-55mm f/3.5-5.6 IS II",
       subtitle: "Versatile, sharp and fast. What more can you ask for?",
       shortDesc:
-        "This lens stays on my camera 90% of the time. It's has the best performance and offers high resolution throughout the entire zoom range.",
-      href: "https://amzn.to/3DWAqGU",
-      image: sigma2470,
+        "This is my only lens currently! It's amazing for standard, properly lit photography. Most of my pictures taken in 2024 were taken using this lens.",
+      href: "https://amzn.to/3CHO6qG",
+      image: shit,
       imageAlt: "",
-      tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
-    },
-    {
-      heading: "Lens",
-      title: "Canon 16-35mm f/4",
-      longTitle: "Canon EF 16-35mm f/4L IS USM Lens",
-      shortDesc:
-        "A wide angle lens is a must-have when shooting architecture or landscapes. I've taken my most popular photos with this lens.",
-      href: "https://amzn.to/3r7OV35",
-      image: canon1635,
-      imageAlt: "",
-      tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
-      scale: "sm:scale-[1.7]",
-    },
-    {
-      heading: "Lens",
-      title: "Sony 35mm f/1.4 GM",
-      longTitle: "Sony FE 35mm f/1.4 GM Lens",
-      shortDesc:
-        "I’ve never been one for prime lenses, but having a 35mm has been essential for street photography or for when I’m trying to pack light. The bokeh from the f/1.8 is absolutely beautiful.",
-      href: "https://amzn.to/3E3h5nw",
-      image: sony35,
-      imageAlt: "",
-      tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
+      tags: ["Canon", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
     },
   ],
-  drone: {
-    heading: "Drone",
-    title: "DJI Mavic Mini",
-    longTitle: "DJI Mavic Mini",
-    subtitle: "The best drone for the price.",
-    shortDesc:
-      "The best beginner drone available, simply because it frees you from worrying about drone restrictions. It’s affordable, takes sharp photos and allows you gain new perspectives as a photographer.",
-    description:
-      "The DJI Mavic Mini is the best drone for the price. It has a 48MP camera, 34 minutes of flight time, and a 4K video recording capability. It’s also super easy to fly and has a great range.",
-    href: "https://amzn.to/3LILERf",
-    image: dji_mini,
-    imageAlt: "",
-    tags: ["DJI", "Mavic", "Mini", "2"],
-  },
   accessories: [
-    {
-      heading: "Accessory",
-      title: "Peak Design Capture Clip",
-      subtitle: "",
-      shortDesc:
-        "The Peak Design Capture Clip is a must-have for any photographer. It allows you to quickly attach your camera to a belt, backpack or bag strap.",
-      description:
-        "The Peak Design Capture Clip is a must-have for any photographer. It allows you to quickly attach your camera to a belt, backpack or bag strap. It’s also incredibly durable and has a great design.",
-      href: "https://amzn.to/3LILERf",
-      image: capture_clip,
-      imageAlt: "",
-      scale: "scale-125",
-      tags: ["Peak", "Design", "Capture", "Clip"],
-    },
     {
       heading: "Camera Filter",
       title: "Hoya Polarizing Filter",
@@ -212,7 +163,7 @@ const GearItemSmall = ({ image, href, imageAlt, scale, shortDesc, title }) => {
 const Gear = () => {
   return (
     <>
-      <NextSeo title="Gear" canonical="https://typicalmitul.com/gear" />
+      <NextSeo title="Gear" canonical="https://ashie.lol/gear" />
       <main className="relative h-full pb-20">
         <div className="items-center justify-between md:flex">
           <div className="flex items-center px-6 py-6 md:px-4 gap-x-yeat">
@@ -243,7 +194,7 @@ const Gear = () => {
             })}
           </div>
 
-          <div className="relative w-full col-span-2 px-6 md:px-4">
+          {/*<div className="relative w-full col-span-2 px-6 md:px-4">
             <div className="mb-2 overflow-hidden bg-white border rounded h-[48rem] border-stone-light">
               <NextImage
                 src={jay_lookup}
@@ -269,7 +220,7 @@ const Gear = () => {
                 Sigma 24-70mm f/2.8
               </Link>
             </span>
-          </div>
+          </div>*/}
           <Break />
           <div className="grid grid-cols-2 px-6 md:grid-cols-3 gap-yeat md:gap-y-6 md:gap-x-6 md:px-4">
             <Heading className="col-span-full">Lenses</Heading>
@@ -288,35 +239,9 @@ const Gear = () => {
                 />
               );
             })}
-            <GearItemSmall
-              image={gear_data.drone.image}
-              imageAlt={gear_data.drone.imageAlt}
-              title={gear_data.drone.title}
-              shortDesc={gear_data.drone.shortDesc}
-              scale={gear_data.drone.scale}
-              href={gear_data.drone.href}
-            />
-            <div className="relative w-full col-span-2 md:px-0">
-              <div className="h-[calc(100%-38px)] mb-2 overflow-hidden bg-white border rounded border-stone-light">
-                <NextImage
-                  src={heart_lake}
-                  className="rounded"
-                  style={{ objectFit: "cover", height: "100%" }}
-                />
-              </div>
-              <span className="inline-block w-full p-1 text-sm text-center border rounded text-stone-blue">
-                Photo taken on my{" "}
-                <Link
-                  isExternal
-                  href="https://amzn.to/3LILERf"
-                  className="underline transition duration-200 cursor-pointer underline-offset-2 hover:bg-yolk/50 hover:text-dark"
-                >
-                  DJI Mavic Mini
-                </Link>
-              </span>
-            </div>
           </div>
           <Break />
+          {/*
           <div className="grid grid-cols-2 gap-4 px-6 md:grid-cols-4 md:px-4">
             <Heading className="col-span-full">Accessories</Heading>
             {gear_data.accessories.map((item) => {
@@ -334,7 +259,7 @@ const Gear = () => {
                 />
               );
             })}
-          </div>
+          </div> */}
         </section>
         {/* <Break /> */}
         {/* <section className="grid w-full grid-cols-2 col-span-1 px-4 mt-16 md:grid-cols-4 h-96 gap-x-4">
