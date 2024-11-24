@@ -5,7 +5,7 @@ let cachedResults;
 export default async function getResults() {
   if (!cachedResults) {
     const fetchedResults = await cloudinary.v2.search
-      .expression(`folder:typicalmitul/*`)
+      .expression(`folder:musical/*`)
       .sort_by("public_id", "desc")
       .max_results(400)
       .execute();
@@ -19,7 +19,7 @@ export default async function getResults() {
 export async function getMetroResults() {
   if (!cachedResults) {
     const fetchedResults = await cloudinary.v2.search
-      .expression(`folder:metro/*`)
+      .expression(`folder:nature/*`)
       .sort_by("public_id", "desc")
       .max_results(400)
       .execute();

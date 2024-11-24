@@ -20,29 +20,24 @@ import splitbee from "@splitbee/web";
 
 const FILTERS = [
   {
-    title: "All",
+    title: "all",
     type: "all",
-    filter: "typicalmitul",
+    filter: "ash",
   },
   {
-    title: "Concerts",
-    type: "concerts",
-    filter: "concerts",
+    title: "musical performances",
+    type: "mscart",
+    filter: "musical",
   },
   {
-    title: "Cityscapes & Architecture",
-    type: "architecture",
-    filter: "architecture",
+    title: "cityscapes",
+    type: "citysc",
+    filter: "city",
   },
   {
-    title: "Street",
-    type: "street",
-    filter: "street",
-  },
-  {
-    title: "The Outdoors",
-    type: "outdoors",
-    filter: "outdoors",
+    title: "nature",
+    type: "nature",
+    filter: "nature",
   },
 ];
 
@@ -80,7 +75,7 @@ const Gallery = ({ images }) => {
   const { photoId, type } = router.query;
   const [open, setOpen] = useState(false);
   const [shuffled, setShuffled] = useState(false);
-  const [filter, setFilter] = useState("typicalmitul");
+  const [filter, setFilter] = useState("ash");
   const newImages = images.filter((image) => image.public_id.includes(filter));
   const [gridImages, setGridImages] = useState(images);
   const [selectedImage, setSelectedImage] = useState({
@@ -96,7 +91,7 @@ const Gallery = ({ images }) => {
     if (type && type !== "all") {
       setFilter(type);
     } else {
-      setFilter("typicalmitul");
+      setFilter("ash");
     }
   }, [router.isReady]);
 
@@ -173,9 +168,7 @@ const Gallery = ({ images }) => {
           <Heading>Gallery</Heading>
           <div>
             <p className="text-sm mb-2">
-              Welcome to my portfolio! Here you&apos;ll find a selection of my
-              best work, from corporate to concert scenes. You can filter
-              through the buttons below. Explore and enjoy!
+              welcome to my portfolio! here you'll find all the photos i'm proud of, from all different categories. use the buttons below to filter!
             </p>
             <div className="flex gap-0.5 flex-wrap">
               {FILTERS.map(({ filter, type, title }) => (
@@ -243,7 +236,7 @@ const Gallery = ({ images }) => {
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:typicalmitul/*`)
+    .expression(`folder:ash/*`)
     .sort_by("public_id", "desc")
     .max_results(400)
     .execute();

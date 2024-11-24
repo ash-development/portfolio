@@ -108,7 +108,7 @@ const ContactDialog = ({ open, onOpenChange, children, ...props }) => {
 };
 
 const Contact = () => {
-  const [value, copy] = useCopyToClipboard("typicalmitul@gmail.com");
+  const [value, copy] = useCopyToClipboard("me@ashie.lol");
 
   return (
     <>
