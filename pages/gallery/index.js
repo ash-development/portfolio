@@ -22,7 +22,7 @@ const FILTERS = [
   {
     title: "all",
     type: "all",
-    filter: "ash",
+    filter: "ashie",
   },
   {
     title: "musical performances",
