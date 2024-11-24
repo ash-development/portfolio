@@ -6,29 +6,13 @@ import { ContactDialog } from "@/components/sections/Contact";
 import { NextSeo } from "next-seo";
 
 const clients = [
-  "Shopify",
-  "Uber",
-  "Google",
-  "Samsung",
-  "dbrand",
-  "Timbuk2",
-  "Amdocs",
-  "500px",
-  "Delta Hotels",
+  "",
 ];
 
 const notables = [
   {
-    title: "500px",
-    href: "https://iso.500px.com/toronto-urban-photography-workshop/",
-  },
-  {
-    title: "Feature Shoot",
-    href: "https://iso.500px.com/4-viral-photos-can-teach-us-creating-marketable-images/",
-  },
-  {
-    title: "Metro News",
-    href: "https://drive.google.com/file/d/0B-wYLuK2QlRwb1FmOThmUmYwekU/view?resourcekey=0-qLFUahFzx44xsvJse_xK1A",
+    title: "WMSC Radio",
+    href: "https://wmscradio.com/",
   },
 ];
 
@@ -37,33 +21,27 @@ const AboutText = () => (
     <div className="flex flex-col gap-4 max-w-prose">
       <div>
         <h2 className="text-2xl sm:text-4xl font-mtl-bold">
-          A photographer and then some.
+          a student photographer ... and much more
         </h2>
         <p className="text-2xl sm:text-4xl">
-          {`With a natural instinct to explore the world around me, I’ve built the skill to capture cityscapes, architecture, and urban environments in a new light.`}
+          {``}
         </p>
       </div>
 
       <p className="text-lg sm:text-xl">
-        I try to use photography to prove that life is worth chasing. By working
-        with various brands, large and small, I’ve built the versatility to tell
-        a story through a variety of photography styles ranging from lifestyle,
-        concerts, to corporate events.
+        i am a freshman film and television major at montclair state university. my aim is to become a live television producer, although i do have a big passion for camera work
       </p>
       <p className="text-lg sm:text-xl">
-        I’m always excited to continue pushing myself and seeing what stories I
-        can tell with my camera.
       </p>
       <p className="text-lg sm:text-xl">
-        Thank you for taking the time to visit my portfolio. If you’re
-        interested in working together,{" "}
+        thank you for taking the time to visit my portfolio :) if you'd like to work together in the future,{" "}
         <a
-          href="mailto:typicalmitul@gmail.com"
+          href="mailto:me@ashie.lol"
           className="relative better-underline betterhover:hover:px-1"
         >
-          shoot me an email
+          send me an email
         </a>{" "}
-        and I’ll get back to you.
+        .
       </p>
     </div>
   </div>
@@ -104,7 +82,7 @@ export default function About() {
 
   return (
     <>
-      <NextSeo title="About" canonical="https://typicalmitul.com/about" />
+      <NextSeo title="About" canonical="https://ashie.lol/about" />
       <ContactDialog open={open} onOpenChange={setOpen} />
       <main className="relative pb-20">
         <div className="flex items-center px-6 py-6 md:px-4 gap-x-yeat">
@@ -113,8 +91,8 @@ export default function About() {
         </div>
         <div className="grid px-6 gap-x-12 gap-y-4 md:px-4 md:grid-cols-2">
           <Image
-            src="/images/man-standing-in-montreal-metro.jpg"
-            alt="Photo of myself"
+            src="/images/ashie/billy.jpeg"
+            alt="Photo of my cat, Billy!"
             priority
           />
           <section className="flex flex-col gap-y-4">
