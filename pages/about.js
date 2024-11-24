@@ -91,7 +91,7 @@ export default function About() {
         </div>
         <div className="grid px-6 gap-x-12 gap-y-4 md:px-4 md:grid-cols-2">
           <Image
-            src="/images/ashie/billy.jpeg"
+            src="/images/ashie/billy.webp"
             alt="Photo of my cat, Billy!"
             priority
           />
