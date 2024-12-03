@@ -6,7 +6,6 @@ import NextFutureImage from "next/future/image";
 import Link from "next/link";
 
 const Gallery = ({ selectedPhoto }) => {
-  // const router = useRouter();
   // const { photoId } = router.query;
   // let index = Number(photoId);
 

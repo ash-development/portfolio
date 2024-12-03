@@ -21,7 +21,7 @@ import splitbee from "@splitbee/web";
 const FILTERS = [
   {
     title: "all",
-    type: "all",
+    type: "ashie",
     filter: "ashie",
   },
   {
@@ -236,7 +236,7 @@ const Gallery = ({ images }) => {
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:ash/*`)
+    .expression(`folder:ashie/*`)
     .sort_by("public_id", "desc")
     .max_results(400)
     .execute();
