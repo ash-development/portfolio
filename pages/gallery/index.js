@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { forwardRef } from "react";
 import NextFutureImage from "next/future/image";
 import Link from "next/link";
 import cloudinary from "@/utils/cloudinary";
@@ -68,14 +69,19 @@ const FilterTag = ({ filter, onClick, children }) => {
   );
 };
 
-const MotionImage = motion(NextFutureImage);
+const ForwardedNextFutureImage = forwardRef((props, ref) => (
+    <NextFutureImage {...props} ref={ref} />
+));
+
+//const MotionImage = motion(NextFutureImage);
+const MotionImage = motion(ForwardedNextFutureImage);
 
 const Gallery = ({ images }) => {
   const router = useRouter();
   const { photoId, type } = router.query;
   const [open, setOpen] = useState(false);
   const [shuffled, setShuffled] = useState(false);
-  const [filter, setFilter] = useState("ash");
+  const [filter, setFilter] = useState("ashie");
   const newImages = images.filter((image) => image.public_id.includes(filter));
   const [gridImages, setGridImages] = useState(images);
   const [selectedImage, setSelectedImage] = useState({
@@ -91,7 +97,7 @@ const Gallery = ({ images }) => {
     if (type && type !== "all") {
       setFilter(type);
     } else {
-      setFilter("ash");
+      setFilter("ashie");
     }
   }, [router.isReady]);
 
@@ -114,7 +120,7 @@ const Gallery = ({ images }) => {
     500: 1,
   };
 
-  console.log(type);
+  //console.log(type);
 
   return (
     <main className="relative">
@@ -213,9 +219,9 @@ const Gallery = ({ images }) => {
                       height: height,
                     });
                     setOpen(true);
-                    splitbee.track("Open Photo", {
-                      title: selectedImage.public_id,
-                    });
+                    //splitbee.track("Open Photo", {
+                    //  title: selectedImage.public_id,
+                    //});
                   }}
                   className="cursor-pointer block overflow-hidden transition-all duration-500 border rounded-lg shadow betterhover:hover:shadow-xl betterhover:hover:shadow-yolk/50 betterhover:hover:border-yolk border-stone"
                   alt=""
