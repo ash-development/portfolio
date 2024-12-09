@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
-    "react/jsx-no-target-blank": "off"
+    "react/jsx-no-target-blank": "off",
+    "react/display-name": "off"
   }
 }
