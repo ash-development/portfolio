@@ -70,7 +70,8 @@ const FilterTag = ({ filter, onClick, children }) => {
 };
 
 const ForwardedNextFutureImage = forwardRef((props, ref) => (
-    <NextFutureImage {...props} ref={ref} />
+    //<NextFutureImage {...props} ref={ref} />
+    <NextFutureImage {...props} {...ref} />
 ));
 
 //const MotionImage = motion(NextFutureImage);
