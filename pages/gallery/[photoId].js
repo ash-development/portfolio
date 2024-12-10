@@ -6,8 +6,8 @@ import NextFutureImage from "next/future/image";
 import Link from "next/link";
 
 const Gallery = ({ selectedPhoto }) => {
-  // const { photoId } = router.query;
-  // let index = Number(photoId);
+   //const { photoId } = router.query;
+   //let index = Number(photoId);
 
   const currentPhotoURL = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560/${selectedPhoto.public_id}.${selectedPhoto.format}`;
 
