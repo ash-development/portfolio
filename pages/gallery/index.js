@@ -27,12 +27,12 @@ const FILTERS = [
   },
   {
     title: "musical performances",
-    type: "mscart",
+    type: "musical",
     filter: "musical",
   },
   {
     title: "cityscapes",
-    type: "citysc",
+    type: "city",
     filter: "city",
   },
   {
@@ -143,14 +143,14 @@ const Gallery = ({ images }) => {
                 )}
               >
                 <NextFutureImage
-                  alt=""
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}.${selectedImage.format}`}
-                  placeholder="blur"
-                  blurDataURL={selectedImage.blurDataURL}
-                  // width={selectedImage.width}
-                  // height={selectedImage.height}
-                  fill
-                  className="rounded shadow-md !relative"
+                    alt=""
+                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}.${selectedImage.format}`}
+                    placeholder="blur"
+                    blurDataURL={selectedImage.blurDataURL}
+                    // width={selectedImage.width}
+                    // height={selectedImage.height}
+                    fill
+                    className="rounded shadow-md !relative"
                 />
               </div>
               <div className="flex gap-x-2 absolute top-4 right-4">
