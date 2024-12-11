@@ -17,7 +17,6 @@ import {
 import Heading from "@/components/Heading";
 import { AnimatePresence, motion } from "framer-motion";
 import { cx } from "class-variance-authority";
-import splitbee from "@splitbee/web";
 
 const FILTERS = [
   {

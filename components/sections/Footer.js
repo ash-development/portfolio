@@ -1,4 +1,3 @@
-import splitbee from "@splitbee/web";
 
 const Footer = () => {
   const footerLinks = [
@@ -22,11 +21,6 @@ const Footer = () => {
         href={href}
         target="_blank"
         rel="noreferrer noopener"
-        onClick={() =>
-          splitbee.track("Social Click", {
-            location: text,
-          })
-        }
       >
         {children}
       </a>
@@ -46,11 +40,6 @@ const Footer = () => {
         Source code can be found {" "}
         <a
           href="https://github.com/mitul-s/typicalmitul.com"
-          onClick={() =>
-            splitbee.track("Social Click", {
-              location: "Github",
-            })
-          }
           target="_blank"
           rel="noreferrer"
           className="underline underline-offset-2"

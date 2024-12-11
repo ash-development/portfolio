@@ -9,7 +9,6 @@ import CallToAction from "@/sections/CallToAction";
 
 import Script from "next/script";
 import { SocialProfileJsonLd, WebPageJsonLd } from "next-seo";
-import { Analytics } from "@vercel/analytics/react"
 
 const Section = ({ className, children }) => {
   return <section className={`px-6 md:px-4 ${className}`}>{children}</section>;

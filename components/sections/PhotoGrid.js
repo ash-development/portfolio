@@ -18,7 +18,6 @@ import NextFutureImage from "next/future/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { cx } from "class-variance-authority";
-import splitbee from "@splitbee/web";
 import Button from "@/components/Button";
 import { ArrowRight } from "phosphor-react";
 
@@ -101,10 +100,6 @@ const PhotoGrid = () => {
               <DialogTrigger
                 key={image.key}
                 className="relative w-full overflow-hidden transition-all duration-500 border rounded-lg shadow betterhover:hover:shadow-xl betterhover:hover:shadow-yolk/50 betterhover:hover:border-yolk border-stone photo-grid-item"
-                onClick={() => {
-                  setSelected(image.key);
-                  splitbee.track("Open Photo", { title: image.title });
-                }}
               >
                 <Image2
                   src={image.src}

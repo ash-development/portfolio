@@ -7,13 +7,9 @@ import { SheetProvider } from "@/components/Sheet";
 import { DefaultSeo } from "next-seo";
 import Layout from "@/components/Layout";
 
-import splitbee from "@splitbee/web";
 import { Analytics } from "@vercel/analytics/react";
 
 const MyApp = ({ Component, pageProps }) => {
-  useEffect(() => {
-    splitbee.init();
-  }, []);
 
   const getLayout =
     Component.getLayout ||
