@@ -36,21 +36,23 @@ const ColumnOne = () => {
 
 const ImageLayout = ({ logo, src, logoAlt, alt, className }) => {
   return (
-    <div className="grid overflow-hidden border rounded h-fit border-stone sm:first:ml-0 sm:last:mr-0 isolate">
+    (<div className="grid overflow-hidden border rounded h-fit border-stone sm:first:ml-0 sm:last:mr-0 isolate">
       <div className="z-10 flex flex-col items-center justify-center text-white gap-y-4 -mt-yeat overlay">
         <div className={`relative w-20 h-20 sm:w-40 sm:h-40 overflow-hidden ${className}`}>
-          <NextImage layout="fill" objectFit="contain" src={logo} alt={logoAlt} />
+          <NextImage
+            src={logo}
+            alt={logoAlt}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "contain"
+            }} />
         </div>
       </div>
       <div className="scale-[101.5%] content brightness-50 aspect-square blur-[3px]">
-        <NextImage 
-          // placeholder="blur" 
-          layout="fill" 
-          src={src}
-          alt={alt}
-          className="object-cover" />
+        <NextImage src={src} alt={alt} className="object-cover" fill sizes="100vw" />
       </div>
-    </div>
+    </div>)
   );
 };
 

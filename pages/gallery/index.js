@@ -70,7 +70,13 @@ const FilterTag = ({ filter, onClick, children }) => {
 };
 
 const ForwardedNextFutureImage = forwardRef((props, ref) => (
-    <NextFutureImage {...props} ref={ref} />
+    <NextFutureImage
+      {...props}
+      ref={ref}
+      style={{
+        maxWidth: "100%",
+        height: "auto"
+      }} />
 ));
 
 
@@ -143,15 +149,18 @@ const Gallery = ({ images }) => {
                 )}
               >
                 <NextFutureImage
-                    alt=""
-                    src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}.${selectedImage.format}`}
-                    placeholder="blur"
-                    blurDataURL={selectedImage.blurDataURL}
-                    // width={selectedImage.width}
-                    // height={selectedImage.height}
-                    fill
-                    className="rounded shadow-md !relative"
-                />
+                  alt=""
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}.${selectedImage.format}`}
+                  placeholder="blur"
+                  blurDataURL={selectedImage.blurDataURL}
+                  // width={selectedImage.width}
+                  // height={selectedImage.height}
+                  fill
+                  className="rounded shadow-md !relative"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </div>
               <div className="flex gap-x-2 absolute top-4 right-4">
                 {/* <button>Share</button> */}

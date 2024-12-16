@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import getResults from "@/utils/cachedImages";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import cloudinary from "@/utils/cloudinary";
-import NextFutureImage from "next/future/image";
+import NextFutureImage from "next/image";
 import Link from "next/link";
 
 const Gallery = ({ selectedPhoto }) => {

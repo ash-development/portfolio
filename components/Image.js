@@ -17,7 +17,7 @@ export const Image = ({
   ...props
 }) => {
   return (
-    <div
+    (<div
       className={clsx(
         "relative w-full overflow-hidden rounded-lg transition-all border shadow betterhover:hover:shadow-xl betterhover:hover:shadow-yolk/50 duration-500 betterhover:hover:border-yolk",
         {
@@ -38,13 +38,15 @@ export const Image = ({
         src={src}
         alt={alt}
         quality={25}
-        layout="fill"
-        objectFit="cover"
         className={clsx({
           "transition duration-500 betterhover:hover:scale-[1.03]": !hasScale,
         })}
-      />
-    </div>
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover"
+        }} />
+    </div>)
   );
 };
 

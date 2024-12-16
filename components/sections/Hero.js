@@ -8,7 +8,7 @@ const Hero = () => {
   const isSmall = useIsSmall();
 
   return (
-    <motion.section
+    (<motion.section
       className="w-screen max-w-[1792px] hero"
       layout
       animate={{
@@ -38,15 +38,17 @@ const Hero = () => {
         >
           <NextImage
             src={mtlckBG}
-            layout="fill"
-            objectFit="cover"
             priority
             alt="a photo of a wall with a bunch of diferent stickers and graffitti"
             quality={5}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover"
+            }} />
         </motion.div>
       </div>
-    </motion.section>
+    </motion.section>)
   );
 };
 

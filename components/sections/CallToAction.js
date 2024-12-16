@@ -3,7 +3,7 @@ import uber from "@/images/logos/uber-logo.png";
 
 const CallToAction = () => {
   return (
-    <div className="px-6 md:p-4">
+    (<div className="px-6 md:p-4">
       <div
         className="px-4 py-4 sm:py-8 rounded text-eggshell md:py-12 md:px-12 bg-[#7F6A8A] shadow shadow-[#276EF0]"
         style={{
@@ -14,10 +14,12 @@ const CallToAction = () => {
           <div className={`relative w-12 sm:w-20 h-8 overflow-hidden`}>
             <NextImage
               src={uber}
-              objectFit="contain"
-              layout="fill"
               alt="Uber Logo"
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "contain"
+              }} />
           </div>
           <blockquote className="text-xl sm:text-2xl sm:!leading-tight md:text-5xl">
             We worked with Mitul to build an exhibit featuring employee
@@ -32,7 +34,7 @@ const CallToAction = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 
