@@ -46,16 +46,17 @@ const FilterTag = ({ filter, onClick, children }) => {
   const { type } = router.query;
 
   return (
-    <div className="grid">
-      <Link href={`/gallery?type=${filter}`} as={`/gallery/${filter}`}>
-        <a
-          className={cx(
-            "border rounded px-2 py-0.5 border-dark text-sm content text-dark z-10"
-          )}
-          onClick={onClick}
-        >
-          {children}
-        </a>
+    (<div className="grid">
+      <Link
+        href={`/gallery?type=${filter}`}
+        as={`/gallery/${filter}`}
+        className={cx(
+          "border rounded px-2 py-0.5 border-dark text-sm content text-dark z-10"
+        )}
+        onClick={onClick}>
+
+        {children}
+
       </Link>
       {filter === type || (!type && filter === "all") ? (
         <motion.div
@@ -64,7 +65,7 @@ const FilterTag = ({ filter, onClick, children }) => {
           animate
         />
       ) : null}
-    </div>
+    </div>)
   );
 };
 
@@ -123,7 +124,7 @@ const Gallery = ({ images }) => {
   //console.log(type);
 
   return (
-    <main className="relative">
+    (<main className="relative">
       <Dialog open={open} onOpenChange={setOpen}>
         {photoId && (
           <DialogPortal>
@@ -197,7 +198,7 @@ const Gallery = ({ images }) => {
                 href={`/gallery/?photoId=${id}`}
                 as={`/gallery/${id}`}
                 shallow
-              >
+                legacyBehavior>
                 <MotionImage
                   // initial={{ scale: 0.8, opacity: 0 }}
                   // animate={{
@@ -236,7 +237,7 @@ const Gallery = ({ images }) => {
           )
         )}
       </Masonry>
-    </main>
+    </main>)
   );
 };
 

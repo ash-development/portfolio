@@ -7,7 +7,7 @@ export const Link = React.forwardRef(
     // })
     return (
       // eslint-disable-next-line react/jsx-no-target-blank
-      <a
+      (<a
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
@@ -16,7 +16,7 @@ export const Link = React.forwardRef(
         {...rest}
       >
         {children}
-      </a>
+      </a>)
     );
   }
 );

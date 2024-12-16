@@ -55,8 +55,8 @@ const NavigationLink = ({ intent, href, onClick, children }) => {
   const router = useRouter();
   const isActive = router.pathname === href;
   return (
-    <NavigationMenu.Item>
-      <NextLink href={href} passHref>
+    (<NavigationMenu.Item>
+      <NextLink href={href} passHref legacyBehavior>
         <NavigationMenu.Link
           data-active={isActive}
           onClick={onClick}
@@ -65,7 +65,7 @@ const NavigationLink = ({ intent, href, onClick, children }) => {
           {children}
         </NavigationMenu.Link>
       </NextLink>
-    </NavigationMenu.Item>
+    </NavigationMenu.Item>)
   );
 };
 
@@ -75,157 +75,131 @@ const Navigation = () => {
   // Mobile Navigation
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
 
-  return (
-    <>
-      <ContactDialog open={open} onOpenChange={setOpen} />
-      <NavigationMenu.Root>
-        <NavigationMenu.List className="flex items-center justify-center w-full px-4 pt-4 pb-4 mx-auto border-b text-md gap-x-2 border-stone-light">
-          <NavigationMenu.Item className="mr-auto">
-            <NextLink href="/" passHref>
-              <NavigationMenu.Link className="text-xl font-mtl-bold">
-                ash schnoor
-              </NavigationMenu.Link>
-            </NextLink>
-          </NavigationMenu.Item>
+  return (<>
+    <ContactDialog open={open} onOpenChange={setOpen} />
+    <NavigationMenu.Root>
+      <NavigationMenu.List className="flex items-center justify-center w-full px-4 pt-4 pb-4 mx-auto border-b text-md gap-x-2 border-stone-light">
+        <NavigationMenu.Item className="mr-auto">
+          <NextLink href="/" passHref legacyBehavior>
+            <NavigationMenu.Link className="text-xl font-mtl-bold">
+              ash schnoor
+            </NavigationMenu.Link>
+          </NextLink>
+        </NavigationMenu.Item>
+        {navLinks.map((link) => {
+          return (
+            <NavigationLink key={link.id} href={link.href} intent="desktop">
+              {link.title}
+            </NavigationLink>
+          );
+        })}
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger
+            className={navigationLink({ intent: "desktop" })}
+            onClick={() => setOpen(true)}
+          >
+            Contact
+          </NavigationMenu.Trigger>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item className="list-none">
+          <NavigationMenu.Trigger className="sm:hidden" asChild>
+            <Toggle
+              pressed={isMobileNavOpen}
+              onPressedChange={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            >
+              {isMobileNavOpen ? "Close" : "Menu"}
+            </Toggle>
+          </NavigationMenu.Trigger>
+        </NavigationMenu.Item>
+      </NavigationMenu.List>
+      <RemoveScroll
+        enabled={isMobileNavOpen}
+        className={cx("sm:hidden", isMobileNavOpen ? "visible" : "invisible")}
+      >
+        <ul
+          className={cx(
+            "overflow-y-auto flex flex-col h-screen transition-all absolute w-full pb-8 bg-white",
+            isMobileNavOpen ? "opacity-100" : "opacity-0"
+          )}
+        >
+          <NavigationLink
+            href="/"
+            intent="mobile"
+            onClick={() => setIsMobileNavOpen(false)}
+          >
+            Home
+          </NavigationLink>
           {navLinks.map((link) => {
             return (
-              <NavigationLink key={link.id} href={link.href} intent="desktop">
+              <NavigationLink
+                key={link.id}
+                href={link.href}
+                intent="mobile"
+                onClick={() => setIsMobileNavOpen(false)}
+              >
                 {link.title}
               </NavigationLink>
             );
           })}
           <NavigationMenu.Item>
+            <NextLink href="/montreal-in-motion" passHref legacyBehavior>
+              <NavigationMenu.Link
+                className={cx(
+                  navigationLink({ intent: "mobile" }),
+                  "relative sm:!flex after:content-['New!'] after:ml-1 items-center after:h-fit after:bg-yolk after:text-xs after:p-0.5 after:rounded-sm after:shadow-sm"
+                )}
+              >
+                Montreal Metro
+              </NavigationMenu.Link>
+            </NextLink>
+          </NavigationMenu.Item>
+          <NavigationMenu.Item>
             <NavigationMenu.Trigger
-              className={navigationLink({ intent: "desktop" })}
-              onClick={() => setOpen(true)}
+              className={navigationLink({ intent: "mobile" })}
+              onClick={() => {
+                setOpen(true);
+              }}
             >
               Contact
             </NavigationMenu.Trigger>
           </NavigationMenu.Item>
-          <NavigationMenu.Item className="list-none">
-            <NavigationMenu.Trigger className="sm:hidden" asChild>
-              <Toggle
-                pressed={isMobileNavOpen}
-                onPressedChange={() => setIsMobileNavOpen(!isMobileNavOpen)}
-              >
-                {isMobileNavOpen ? "Close" : "Menu"}
-              </Toggle>
-            </NavigationMenu.Trigger>
-          </NavigationMenu.Item>
-        </NavigationMenu.List>
-        <RemoveScroll
-          enabled={isMobileNavOpen}
-          className={cx("sm:hidden", isMobileNavOpen ? "visible" : "invisible")}
-        >
-          <ul
-            className={cx(
-              "overflow-y-auto flex flex-col h-screen transition-all absolute w-full pb-8 bg-white",
-              isMobileNavOpen ? "opacity-100" : "opacity-0"
-            )}
-          >
-            <NavigationLink
-              href="/"
-              intent="mobile"
-              onClick={() => setIsMobileNavOpen(false)}
-            >
-              Home
-            </NavigationLink>
-            {navLinks.map((link) => {
-              return (
-                <NavigationLink
-                  key={link.id}
-                  href={link.href}
-                  intent="mobile"
-                  onClick={() => setIsMobileNavOpen(false)}
-                >
-                  {link.title}
-                </NavigationLink>
-              );
-            })}
-            <NavigationMenu.Item>
-              <NextLink href="/montreal-in-motion" passHref>
-                <NavigationMenu.Link
-                  className={cx(
-                    navigationLink({ intent: "mobile" }),
-                    "relative sm:!flex after:content-['New!'] after:ml-1 items-center after:h-fit after:bg-yolk after:text-xs after:p-0.5 after:rounded-sm after:shadow-sm"
-                  )}
-                >
-                  Montreal Metro
-                </NavigationMenu.Link>
-              </NextLink>
-            </NavigationMenu.Item>
-            <NavigationMenu.Item>
-              <NavigationMenu.Trigger
-                className={navigationLink({ intent: "mobile" })}
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                Contact
-              </NavigationMenu.Trigger>
-            </NavigationMenu.Item>
-          </ul>
-        </RemoveScroll>
-      </NavigationMenu.Root>
-    </>
-  );
+        </ul>
+      </RemoveScroll>
+    </NavigationMenu.Root>
+  </>);
 };
 
 const Navigation2 = () => {
   const router = useRouter();
   const { open, setOpen } = React.useContext(SheetContext);
 
-  return (
-    <>
-      <ContactDialog open={open} onOpenChange={setOpen} />
-      <nav className="fixed z-40 p-1 leading-none -translate-x-1/2 bg-white border rounded shadow-md left-1/2 bottom-6 md:bottom-12 border-dark w-fit">
-        <ul className="flex gap-x-0.5 text-base leading-none">
-          {navLinks.map((link) => (
-            <li key={link.id} className="grid">
-              <NextLink href={link.href} passHref>
-                <motion.a
-                  whileTap={{
-                    scale: 0.95,
-                    transition: {
-                      type: "spring",
-                      duration: 0.15,
-                    },
-                  }}
-                  className={clsx(
-                    "inline-block px-5 py-2.5 border border-transparent rounded content text-dark transition-colors duration-250",
-                    {
-                      "betterhover:hover:border-dark/50":
-                        router.pathname !== link.href,
-                    }
-                  )}
-                >
-                  {link.title}
-                </motion.a>
-              </NextLink>
-              {router.pathname === link.href && (
-                <motion.div
-                  layoutId="navItem"
-                  className="inline-block px-5 py-2.5 border border-transparent rounded shadow bg-dark overlay invert mix-blend-difference"
-                  animate
-                />
-              )}
-            </li>
-          ))}
-          <li className="grid">
-            <motion.button
-              onClick={() => setOpen(true)}
-              whileTap={{
-                scale: 0.95,
-                transition: {
-                  type: "spring",
-                  duration: 0.15,
-                },
-              }}
-              className="inline-block px-5 py-2.5 transition-colors border border-transparent rounded content text-dark duration-250 betterhover:hover:border-dark/50"
-            >
-              Contact
-            </motion.button>
-            {open && (
+  return (<>
+    <ContactDialog open={open} onOpenChange={setOpen} />
+    <nav className="fixed z-40 p-1 leading-none -translate-x-1/2 bg-white border rounded shadow-md left-1/2 bottom-6 md:bottom-12 border-dark w-fit">
+      <ul className="flex gap-x-0.5 text-base leading-none">
+        {navLinks.map((link) => (
+          <li key={link.id} className="grid">
+            <NextLink href={link.href} passHref legacyBehavior>
+              <motion.a
+                whileTap={{
+                  scale: 0.95,
+                  transition: {
+                    type: "spring",
+                    duration: 0.15,
+                  },
+                }}
+                className={clsx(
+                  "inline-block px-5 py-2.5 border border-transparent rounded content text-dark transition-colors duration-250",
+                  {
+                    "betterhover:hover:border-dark/50":
+                      router.pathname !== link.href,
+                  }
+                )}
+              >
+                {link.title}
+              </motion.a>
+            </NextLink>
+            {router.pathname === link.href && (
               <motion.div
                 layoutId="navItem"
                 className="inline-block px-5 py-2.5 border border-transparent rounded shadow bg-dark overlay invert mix-blend-difference"
@@ -233,10 +207,32 @@ const Navigation2 = () => {
               />
             )}
           </li>
-        </ul>
-      </nav>
-    </>
-  );
+        ))}
+        <li className="grid">
+          <motion.button
+            onClick={() => setOpen(true)}
+            whileTap={{
+              scale: 0.95,
+              transition: {
+                type: "spring",
+                duration: 0.15,
+              },
+            }}
+            className="inline-block px-5 py-2.5 transition-colors border border-transparent rounded content text-dark duration-250 betterhover:hover:border-dark/50"
+          >
+            Contact
+          </motion.button>
+          {open && (
+            <motion.div
+              layoutId="navItem"
+              className="inline-block px-5 py-2.5 border border-transparent rounded shadow bg-dark overlay invert mix-blend-difference"
+              animate
+            />
+          )}
+        </li>
+      </ul>
+    </nav>
+  </>);
 };
 
 export default Navigation;

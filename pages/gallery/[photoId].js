@@ -12,13 +12,15 @@ const Gallery = ({ selectedPhoto }) => {
   const currentPhotoURL = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560/${selectedPhoto.public_id}.${selectedPhoto.format}`;
 
   return (
-    <main className="relative">
+    (<main className="relative">
       <div className="px-4 py-4">
         <div className="relative">
-          <Link href="/gallery">
-            <a className="rounded px-2 py-2 inline-block absolute top-4 left-4 bg-yolk text-black text-sm border-black border leading-none transition betterhover:hover:bg-yolk/75">
+          <Link
+            href="/gallery"
+            className="rounded px-2 py-2 inline-block absolute top-4 left-4 bg-yolk text-black text-sm border-black border leading-none transition betterhover:hover:bg-yolk/75">
+            
               Back to Gallery
-            </a>
+            
           </Link>
           <NextFutureImage
             src={currentPhotoURL}
@@ -31,7 +33,7 @@ const Gallery = ({ selectedPhoto }) => {
           />
         </div>
       </div>
-    </main>
+    </main>)
   );
 };
 
