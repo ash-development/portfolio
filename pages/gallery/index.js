@@ -21,7 +21,7 @@ import { cx } from "class-variance-authority";
 const FILTERS = [
   {
     title: "all",
-    type: "ashie",
+    type: "all",
     filter: "ashie",
   },
   {

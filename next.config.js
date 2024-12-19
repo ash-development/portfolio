@@ -37,13 +37,18 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/architecture",
-        destination: "/gallery/architecture",
+        source: "/musical",
+        destination: "/gallery/musical",
         permanent: true,
       },
       {
-        source: "/montreal-metro",
-        destination: "/montreal-in-motion",
+        source: "/city",
+        destination: "/gallery/city",
+        permanent: true,
+      },
+      {
+        source: "/nature",
+        destination: "/gallery/nature",
         permanent: true,
       },
     ];
@@ -55,20 +60,16 @@ module.exports = {
         destination: "/gallery?type=concerts",
       },
       {
-        source: "/gallery/architecture",
-        destination: "/gallery?type=architecture",
+        source: "/gallery/musical",
+        destination: "/gallery?type=musical",
       },
       {
-        source: "/gallery/street",
-        destination: "/gallery?type=street",
+        source: "/gallery/city",
+        destination: "/gallery?type=city",
       },
       {
         source: "/gallery/nature",
         destination: "/gallery?type=nature",
-      },
-      {
-        source: "/gallery/outdoors",
-        destination: "/gallery?type=outdoors",
       },
       {
         source: "/gallery/all",
