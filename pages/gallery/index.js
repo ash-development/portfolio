@@ -150,7 +150,7 @@ const Gallery = ({ images }) => {
               >
                 <NextFutureImage
                   alt=""
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}.${selectedImage.format}`}
+                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
                   placeholder="blur"
                   blurDataURL={selectedImage.blurDataURL}
                   // width={selectedImage.width}

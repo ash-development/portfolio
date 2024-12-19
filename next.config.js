@@ -4,14 +4,31 @@ module.exports = {
   ...nextTranslate(),
   reactStrictMode: true,
   images: {
-    domains: [
-      "images.unsplash.com",
-      "res.cloudinary.com",
-      "mitul.ca",
-      "www.dpreview.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: '',
+        pathname: '**',
+        search: '',
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: '',
+        pathname: '**',
+        search: '',
+      },
+      {
+        protocol: "https",
+        hostname: "www.dpreview.com",
+        port: '',
+        pathname: '**',
+        search: '',
+      },
     ],
   },
-  experimental: { images: { allowFutureImage: true } },
+  //experimental: { images: { allowFutureImage: true } },
   async redirects() {
     return [
       {
