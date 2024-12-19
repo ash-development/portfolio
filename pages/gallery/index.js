@@ -46,37 +46,37 @@ const FilterTag = ({ filter, onClick, children }) => {
   const { type } = router.query;
 
   return (
-    (<div className="grid">
-      <Link
-        href={`/gallery?type=${filter}`}
-        as={`/gallery/${filter}`}
-        className={cx(
-          "border rounded px-2 py-0.5 border-dark text-sm content text-dark z-10"
-        )}
-        onClick={onClick}>
+      (<div className="grid">
+        <Link
+            href={`/gallery?type=${filter}`}
+            as={`/gallery/${filter}`}
+            className={cx(
+                "border rounded px-2 py-0.5 border-dark text-sm content text-dark z-10"
+            )}
+            onClick={onClick}>
 
-        {children}
+          {children}
 
-      </Link>
-      {filter === type || (!type && filter === "all") ? (
-        <motion.div
-          layoutId="categoryItem"
-          className="inline-block px-2 py-0.5 rounded shadow bg-yolk overlay"
-          animate
-        />
-      ) : null}
-    </div>)
+        </Link>
+        {filter === type || (!type && filter === "all") ? (
+            <motion.div
+                layoutId="categoryItem"
+                className="inline-block px-2 py-0.5 rounded shadow bg-yolk overlay"
+                animate
+            />
+        ) : null}
+      </div>)
   );
 };
 
 const ForwardedNextFutureImage = forwardRef((props, ref) => (
     <NextFutureImage
-      {...props}
-      ref={ref}
-      style={{
-        maxWidth: "100%",
-        height: "auto"
-      }} />
+        {...props}
+        ref={ref}
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
 ));
 
 
@@ -130,132 +130,132 @@ const Gallery = ({ images }) => {
   //console.log(type);
 
   return (
-    (<main className="relative">
-      <Dialog open={open} onOpenChange={setOpen}>
-        {photoId && (
-          <DialogPortal>
-            <DialogOverlay className="fixed inset-0 bg-black/75 backdrop-blur-md rdx-state-open:overlay-fade-in rdx-state-closed:overlay-fade-out" />
-            <DialogContent
-              className="fixed inset-0 mx-auto my-auto rounded shadow outline-none h-fit w-fit rdx-state-open:dialog-item-open rdx-state-closed:dialog-item-close"
-              onEscapeKeyDown={() => router.back()}
-              onPointerDownOutside={() => router.back()}
-            >
-              <div
-                className={cx(
-                  "relative w-auto sm:h-[800px]",
-                  selectedImage.width < selectedImage.height
-                    ? "h-[500px]"
-                    : "h-[250px]"
-                )}
-              >
-                <NextFutureImage
-                  alt=""
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
-                  placeholder="blur"
-                  blurDataURL={selectedImage.blurDataURL}
-                  // width={selectedImage.width}
-                  // height={selectedImage.height}
-                  fill
-                  className="rounded shadow-md !relative"
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto"
-                  }} />
-              </div>
-              <div className="flex gap-x-2 absolute top-4 right-4">
-                {/* <button>Share</button> */}
-                <DialogClose
-                  className="rounded-full bg-white/10 text-white p-2.5 leading-none hover:bg-black transition shrink-0"
-                  onClick={() => router.back()}
+      (<main className="relative">
+        <Dialog open={open} onOpenChange={setOpen}>
+          {photoId && (
+              <DialogPortal>
+                <DialogOverlay className="fixed inset-0 bg-black/75 backdrop-blur-md rdx-state-open:overlay-fade-in rdx-state-closed:overlay-fade-out" />
+                <DialogContent
+                    className="fixed inset-0 mx-auto my-auto rounded shadow outline-none h-fit w-fit rdx-state-open:dialog-item-open rdx-state-closed:dialog-item-close"
+                    onEscapeKeyDown={() => router.back()}
+                    onPointerDownOutside={() => router.back()}
                 >
-                  <X />
-                </DialogClose>
+                  <div
+                      className={cx(
+                          "relative w-auto sm:h-[800px]",
+                          selectedImage.width < selectedImage.height
+                              ? "h-[500px]"
+                              : "h-[250px]"
+                      )}
+                  >
+                    <NextFutureImage
+                        alt=""
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
+                        placeholder="blur"
+                        blurDataURL={selectedImage.blurDataURL}
+                        // width={selectedImage.width}
+                        // height={selectedImage.height}
+                        fill
+                        className="rounded shadow-md !relative"
+                        style={{
+                          maxWidth: "100%",
+                          height: "auto"
+                        }} />
+                  </div>
+                  <div className="flex gap-x-2 absolute top-4 right-4">
+                    {/* <button>Share</button> */}
+                    <DialogClose
+                        className="rounded-full bg-white/10 text-white p-2.5 leading-none hover:bg-black transition shrink-0"
+                        onClick={() => router.back()}
+                    >
+                      <X />
+                    </DialogClose>
+                  </div>
+                </DialogContent>
+              </DialogPortal>
+          )}
+        </Dialog>
+        <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid py-4 px-8 sm:px-4"
+            columnClassName="my-masonry-grid_column"
+        >
+          <div className="h-96 border border-black rounded px-4 pt-2 pb-5 flex flex-col justify-between">
+            <Heading>Gallery</Heading>
+            <div>
+              <p className="text-sm mb-2">
+                welcome to my portfolio! here youll find all the photos im proud of, from all different categories. use the buttons below to filter!
+              </p>
+              <div className="flex gap-0.5 flex-wrap">
+                {FILTERS.map(({ filter, type, title }) => (
+                    <FilterTag
+                        key={type}
+                        filter={type}
+                        onClick={() => setFilter(filter)}
+                    >
+                      {title}
+                    </FilterTag>
+                ))}
               </div>
-            </DialogContent>
-          </DialogPortal>
-        )}
-      </Dialog>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid py-4 px-8 sm:px-4"
-        columnClassName="my-masonry-grid_column"
-      >
-        <div className="h-96 border border-black rounded px-4 pt-2 pb-5 flex flex-col justify-between">
-          <Heading>Gallery</Heading>
-          <div>
-            <p className="text-sm mb-2">
-              welcome to my portfolio! here youll find all the photos im proud of, from all different categories. use the buttons below to filter!
-            </p>
-            <div className="flex gap-0.5 flex-wrap">
-              {FILTERS.map(({ filter, type, title }) => (
-                <FilterTag
-                  key={type}
-                  filter={type}
-                  onClick={() => setFilter(filter)}
-                >
-                  {title}
-                </FilterTag>
-              ))}
             </div>
           </div>
-        </div>
 
-        {gridImages.map(
-          ({ id, public_id, format, width, height, blurDataUrl }) => (
-            <AnimatePresence key={id}>
-              <Link
-                href={`/gallery/?photoId=${id}`}
-                as={`/gallery/${id}`}
-                shallow
-                legacyBehavior>
-                <MotionImage
-                  // initial={{ scale: 0.8, opacity: 0 }}
-                  // animate={{
-                  //   scale: 1,
-                  //   opacity: 1,
-                  // }}
-                  // exit={{
-                  //   scale: 0.8,
-                  //   opacity: 0,
-                  // }}
-                  // layout
-                  onClick={() => {
-                    setSelectedImage({
-                      public_id: public_id,
-                      format: format,
-                      alt: "",
-                      blurDataURL: blurDataUrl,
-                      width: width,
-                      height: height,
-                    });
-                    setOpen(true);
-                    //splitbee.track("Open Photo", {
-                    //  title: selectedImage.public_id,
-                    //});
-                  }}
-                  className="cursor-pointer block overflow-hidden transition-all duration-500 border rounded-lg shadow betterhover:hover:shadow-xl betterhover:hover:shadow-yolk/50 betterhover:hover:border-yolk border-stone"
-                  alt=""
-                  placeholder="blur"
-                  blurDataURL={blurDataUrl}
-                  src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}.${format}`}
-                  width={width}
-                  height={height}
-                />
-              </Link>
-            </AnimatePresence>
-          )
-        )}
-      </Masonry>
-    </main>)
+          {gridImages.map(
+              ({ id, public_id, format, width, height, blurDataUrl }) => (
+                  <AnimatePresence key={id}>
+                    <Link
+                        href={`/gallery/?photoId=${id}`}
+                        as={`/gallery/${id}`}
+                        shallow
+                        legacyBehavior>
+                      <MotionImage
+                          // initial={{ scale: 0.8, opacity: 0 }}
+                          // animate={{
+                          //   scale: 1,
+                          //   opacity: 1,
+                          // }}
+                          // exit={{
+                          //   scale: 0.8,
+                          //   opacity: 0,
+                          // }}
+                          // layout
+                          onClick={() => {
+                            setSelectedImage({
+                              public_id: public_id,
+                              format: format,
+                              alt: "",
+                              blurDataURL: blurDataUrl,
+                              width: width,
+                              height: height,
+                            });
+                            setOpen(true);
+                            //splitbee.track("Open Photo", {
+                            //  title: selectedImage.public_id,
+                            //});
+                          }}
+                          className="cursor-pointer block overflow-hidden transition-all duration-500 border rounded-lg shadow betterhover:hover:shadow-xl betterhover:hover:shadow-yolk/50 betterhover:hover:border-yolk border-stone"
+                          alt=""
+                          placeholder="blur"
+                          blurDataURL={blurDataUrl}
+                          src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}`}
+                          width={width}
+                          height={height}
+                      />
+                    </Link>
+                  </AnimatePresence>
+              )
+          )}
+        </Masonry>
+      </main>)
   );
 };
 
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
-    .expression(`folder:ashie/*`)
-    .sort_by("public_id", "desc")
-    .max_results(400)
-    .execute();
+      .expression(`folder:ashie/*`)
+      .sort_by("public_id", "desc")
+      .max_results(400)
+      .execute();
   let reducedResults = [];
   let i = 0;
   for (let result of results.resources) {
