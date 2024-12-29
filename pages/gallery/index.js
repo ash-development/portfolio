@@ -152,7 +152,8 @@ const Gallery = ({ images }) => {
                         className="rounded shadow-md !relative"
                         style={{
                           maxWidth: "100%",
-                          height: "auto"
+                          minWidth: "100%",
+                          //height: "auto"
                         }} />
                   </div>
                   <div className="flex gap-x-2 absolute top-4 right-4">
@@ -179,16 +180,6 @@ const Gallery = ({ images }) => {
               <p className="text-sm mb-2">
                 welcome to my portfolio! here youll find all the photos im proud of, from all different categories. use the buttons below to filter!
               </p>
-              <div className="flex gap-0.5 flex-wrap">
-                {FILTERS.map(({ filter, type, title }) => (
-                    <FilterTag
-                        key={type}
-                        filter={type}
-                    >
-                      {title}
-                    </FilterTag>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -218,7 +209,7 @@ const Gallery = ({ images }) => {
                               alt: "",
                               blurDataURL: blurDataUrl,
                               width: width,
-                              height: height,
+                              //height: height,
                             });
                             setOpen(true);
                             //splitbee.track("Open Photo", {
