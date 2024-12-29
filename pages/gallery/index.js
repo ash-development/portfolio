@@ -85,11 +85,9 @@ const MotionImage = motion(ForwardedNextFutureImage);
 
 const Gallery = ({ images }) => {
   const router = useRouter();
-  const { photoId, type } = router.query;
+  const { photoId } = router.query;
   const [open, setOpen] = useState(false);
   const [shuffled, setShuffled] = useState(false);
-  const [filter, setFilter] = useState("ashie");
-  const newImages = images.filter((image) => image.public_id.includes(filter));
   const [gridImages, setGridImages] = useState(images);
   const [selectedImage, setSelectedImage] = useState({
     public_id: "",
@@ -101,21 +99,16 @@ const Gallery = ({ images }) => {
 
   useEffect(() => {
     if (!router.isReady) return;
-    if (type && type !== "all") {
-      setFilter(type);
-    } else {
-      setFilter("ashie");
-    }
   }, [router.isReady]);
 
   useEffect(() => {
-    const shuffledImages = newImages.sort(() => 0.5 - Math.random());
+    const shuffledImages = images.sort(() => 0.5 - Math.random());
     setGridImages(shuffledImages);
-  }, [filter]);
+  }, []);
 
   useEffect(() => {
     if (shuffled) return;
-    const shuffledImages = newImages.sort(() => 0.5 - Math.random());
+    const shuffledImages = images.sort(() => 0.5 - Math.random());
     setShuffled(true);
     setGridImages(shuffledImages);
   }, []);
@@ -153,8 +146,8 @@ const Gallery = ({ images }) => {
                         src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
                         placeholder="blur"
                         blurDataURL={selectedImage.blurDataURL}
-                        // width={selectedImage.width}
-                        // height={selectedImage.height}
+                        //width={selectedImage.width}
+                        //height={selectedImage.height}
                         fill
                         className="rounded shadow-md !relative"
                         style={{
@@ -191,7 +184,6 @@ const Gallery = ({ images }) => {
                     <FilterTag
                         key={type}
                         filter={type}
-                        onClick={() => setFilter(filter)}
                     >
                       {title}
                     </FilterTag>
