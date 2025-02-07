@@ -1,11 +1,12 @@
-import lookup from "../../public/images/golden-lights-toronto-lookup.jpg";
-import tower_clouds from "../../public/images/cn-tower-in-the-clouds.jpg";
-import la from "../../public/images/old-school-cadillac.jpg";
-import karen from "../../public/images/female-model-dark-room-highlighted.jpg";
-import nyc_ts from "../../public/images/new-york-city-times-square.jpg";
-import grid_light from "../../public/images/sunlight-through-skyscrapers.jpg";
-import jay_lookup from "../../public/images/blue-jays-hat-lookup.jpg";
-import walker from "../../public/images/crossing-the-road.jpg";
+import one from "../../public/images/me/one_Vish.jpg";
+import two from "../../public/images/me/two_canbeV.jpg";
+import three from "../../public/images/me/three.jpg";
+import four from "../../public/images/me/four.jpg";
+import five from "../../public/images/me/five_V.jpg";
+import six from "../../public/images/me/six.jpg";
+import seven from "../../public/images/me/seven.jpg";
+import eight from "../../public/images/me/eight_V.jpg";
+
 import {
   Dialog,
   DialogTrigger,
@@ -24,54 +25,55 @@ import { ArrowRight } from "phosphor-react";
 const images = [
   {
     key: 1,
-    src: la,
-    title: "Old School Cadillac",
-    alt: "An old school Cadillac parked in front of a driveway in Los Angeles with blue skies and a tree in the background",
+    src: one,
+    title: "",
+    alt: "",
   },
   {
     key: 2,
-    src: jay_lookup,
-    title: "Blue Jays Lookup",
-    alt: "A man wearing a Blue Jays hat looking up at a golden coloured skyscraper in Toronto, Canada with a camera in his hand",
+    src: two,
+    title: "",
+    alt: "",
+	vertical: true,
   },
   {
     key: 3,
-    src: lookup,
-    title: "Toronto Classic Lookup",
-    alt: "Looking up at the skyscrapers in Toronto, Canada's financial district. Corner of a building with golden ceiling lights.",
-    vertical: true,
+    src: seven,
+    title: "",
+    alt: "",
   },
   {
     key: 4,
-    src: nyc_ts,
-    title: "Above Times Square",
-    alt: "A man sitting on top of a building looking down and taking a photo of New York City's Times Square at night",
+    src: four,
+    title: "",
+    alt: "",
   },
   {
     key: 5,
-    src: grid_light,
-    title: "Grid Light",
-    alt: "Patterned skyscrapers in Toronto, Canada standing close together with the sunlight shining through the middle of them",
+    src: five,
+    title: "",
+    alt: "",
+	vertical: true,
   },
   {
     key: 6,
-    src: karen,
-    title: "Karen's Contrast",
-    alt: "Female model standing in a dark room being highlighted from sunshine coming through the window. Extreme juxtaposition.",
+    src: six,
+    title: "",
+    alt: "",
   },
   {
     key: 7,
-    src: tower_clouds,
-    position: "top",
-    title: "Above the Clouds",
-    alt: "A photo of the top of half of the CN Tower in Toronto, Canada, standing tall above the clouds with a blue sky",
-    vertical: true,
+    src: three,
+    title: "",
+    alt: "",
+	position: "right",
   },
   {
     key: 8,
-    src: walker,
-    title: "Slow Walker",
-    alt: "A long exposure of a man crossing the road in Toronto's financial district with two transit streetcars passing in the background",
+    src: eight,
+    title: "",
+    alt: "",
+    vertical: true,
   },
 ];
 
