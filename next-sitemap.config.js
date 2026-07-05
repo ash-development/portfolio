@@ -1,5 +1,5 @@
 const sitemapConfig = { 
-    siteUrl: 'https://ashie.lol',
+    siteUrl: 'https://ashie.pics',
     generateRobotsTxt: true,
     generateIndexSitemap: false,
     exclude: ['/gallery/*'],

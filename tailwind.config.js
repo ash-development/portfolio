@@ -42,7 +42,6 @@ module.exports = {
         // eggshell: "#F8F8F8",
         eggshell: "#F5F7FA",
         // eggshell: "#f6fafd",
-        metro: "#7F6A8A",
         stone: {
           DEFAULT: "#A4A4A4",
           light: "#cbd6e0",

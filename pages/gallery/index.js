@@ -22,7 +22,7 @@ const FILTERS = [
   {
     title: "all",
     type: "all",
-    filter: "ashie",
+    filter: "all",
   },
   {
     title: "musical performances",
@@ -49,7 +49,8 @@ const FilterTag = ({ filter, onClick, children }) => {
       (<div className="grid">
         <Link
             href={`/gallery?type=${filter}`}
-            as={`/gallery/${filter}`}
+            shallow
+            scroll={false}
             className={cx(
                 "border rounded px-2 py-0.5 border-dark text-sm content text-dark z-10"
             )}
@@ -85,7 +86,7 @@ const MotionImage = motion(ForwardedNextFutureImage);
 
 const Gallery = ({ images }) => {
   const router = useRouter();
-  const { photoId } = router.query;
+  const { photoId, type } = router.query;
   const [open, setOpen] = useState(false);
   const [shuffled, setShuffled] = useState(false);
   const [gridImages, setGridImages] = useState(images);
@@ -120,7 +121,10 @@ const Gallery = ({ images }) => {
     500: 1,
   };
 
-  //console.log(type);
+  const visibleImages =
+      !type || type === "all"
+          ? gridImages
+          : gridImages.filter((img) => img.tags?.includes(type));
 
   return (
       (<main className="relative">
@@ -180,10 +184,17 @@ const Gallery = ({ images }) => {
               <p className="text-sm mb-2">
                 welcome to my portfolio! here youll find all the photos im proud of, from all different categories. use the buttons below to filter!
               </p>
+              <div className="flex flex-wrap gap-2">
+                {FILTERS.map(({ title, filter }) => (
+                    <FilterTag key={filter} filter={filter}>
+                      {title}
+                    </FilterTag>
+                ))}
+              </div>
             </div>
           </div>
 
-          {gridImages.map(
+          {visibleImages.map(
               ({ id, public_id, format, width, height, blurDataUrl }) => (
                   <AnimatePresence key={id}>
                     <Link
@@ -236,6 +247,7 @@ const Gallery = ({ images }) => {
 export async function getStaticProps() {
   const results = await cloudinary.v2.search
       .expression(`folder:ashie/*`)
+      .with_field("tags")
       .sort_by("public_id", "desc")
       .max_results(400)
       .execute();
@@ -248,6 +260,7 @@ export async function getStaticProps() {
       width: result.width,
       public_id: result.public_id,
       format: result.format,
+      tags: result.tags || [],
     });
     i++;
   }

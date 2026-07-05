@@ -17,6 +17,7 @@ import Footer from "@/components/sections/Footer";
 import { cx } from "class-variance-authority";
 import r50 from "@/images/ashie/R50.webp";
 import shit from "@/images/ashie/mainlens.webp";
+import fuck from "@/images/ashie/seclens.jpg";
 
 const gear_data = {
   camera: [
@@ -42,11 +43,23 @@ const gear_data = {
       longTitle: "EF-S 18-55mm f/3.5-5.6 IS II",
       subtitle: "Versatile, sharp and fast. What more can you ask for?",
       shortDesc:
-        "This is my only lens currently! It's amazing for standard, properly lit photography. Most of my pictures taken in 2024 were taken using this lens.",
+        "This is amazing for standard, properly lit photography. Most of my pictures taken in 2024 were taken using this lens.",
       href: "https://amzn.to/3CHO6qG",
       image: shit,
       imageAlt: "",
       tags: ["Canon", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
+    },
+    {
+      heading: "Lens",
+      title: "Sigma 24-70mm 1:2.8 EX DG Macro Zoom Lens",
+      longTitle: "Sigma 24-70mm 1:2.8 EX DG Macro Zoom Lens",
+      subtitle: "A versatile zoom lens with outstanding image quality.",
+      shortDesc:
+        "This is my primary lens for concert photography! It captures low-light photos perfectly.",
+      href: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.amazon.com/Sigma-24-70mm-Aspherical-Aperture-Standard/dp/B0009E1XF8&ved=2ahUKEwjWwpbJvd2LAxXeEFkFHf8WPLwQFnoECBkQAQ&usg=AOvVaw08NzpBzOs5_BUwp9HSJIar",
+      image: fuck,
+      imageAlt: "",
+      tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
     },
   ],
   accessories: [

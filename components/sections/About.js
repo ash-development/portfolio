@@ -1,7 +1,7 @@
 import { Button, Tooltip, Marquee, Image } from "@components";
 import { ArrowRight } from "phosphor-react";
 import NextLink from "next/link";
-import idx_me from "../../public/images/ashie/selfie.JPEG";
+import idx_me from "../../public/images/meNEW/HEADSHOT.jpeg";
 
 const About = () => {
   return (<>
@@ -21,7 +21,7 @@ const About = () => {
         </div>
 
         <p className="mb-4 text-2xl xl:text-5xl">
-          <b className="font-mtl-bold">ash</b> is a student photographer based in montclair, new jersey
+          <b className="font-mtl-bold">ash (she/they)</b> is a student photographer based in montclair, new jersey
           dedicated to <b className="font-mtl-bold">creative</b> and <b className="font-mtl-bold">thoughtful</b> concert
           photography.
         </p>

@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
                             titleTemplate="%s | ash schnoor"
                             defaultTitle="ash schnoor | student concert photographer"
                             description="based in montclair, new jersey"
-                            canonical="https://ashie.lol"
+                            canonical="https://ashie.pics"
                             twitter={{
                                 handle: "@underscoreashie",
                                 site: "@underscoreashie",
@@ -29,13 +29,13 @@ const MyApp = ({ Component, pageProps }) => {
                             openGraph={{
                                 type: "website",
                                 locale: "en_CA",
-                                url: "https://ashie.lol",
+                                url: "https://ashie.pics",
                                 title: "ash schnoor | student concert photographer",
                                 description:
                                     "based in montclair, new jersey",
                                 images: [
                                     {
-                                        url: "https://typicalmitul.com/images/og.png",
+                                        url: "https://ashie.pics/images/og.png",
                                         width: 1200,
                                         height: 630,
                                         alt: "ash schnoor | student concert photographer",

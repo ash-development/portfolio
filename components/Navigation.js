@@ -15,6 +15,7 @@ const navLinks = [
   { id: 2, title: "About", href: "/about" },
   { id: 3, title: "Gear", href: "/gear" },
   { id: 4, title: "Gallery", href: "/gallery" },
+  { id: 5, title: "Rates", href: "/rates" },
 ];
 
 const navigationLink = cva(["cursor-pointer"], {
@@ -141,18 +142,6 @@ const Navigation = () => {
               </NavigationLink>
             );
           })}
-          <NavigationMenu.Item>
-            <NextLink href="/montreal-in-motion" passHref legacyBehavior>
-              <NavigationMenu.Link
-                className={cx(
-                  navigationLink({ intent: "mobile" }),
-                  "relative sm:!flex after:content-['New!'] after:ml-1 items-center after:h-fit after:bg-yolk after:text-xs after:p-0.5 after:rounded-sm after:shadow-sm"
-                )}
-              >
-                Montreal Metro
-              </NavigationMenu.Link>
-            </NextLink>
-          </NavigationMenu.Item>
           <NavigationMenu.Item>
             <NavigationMenu.Trigger
               className={navigationLink({ intent: "mobile" })}
