@@ -6,14 +6,23 @@ import { ContactDialog } from "@/components/sections/Contact";
 import { NextSeo } from "next-seo";
 
 const clients = [
-  "",
+  "Phoneboy",
+  "Lyn Lapid",
+  "Jhariah",
+  "The Happy Fits",
+  "TWICE",
+
 ];
 
 const notables = [
   {
     title: "WMSC Radio",
-    href: "https://wmscradio.com/",
+    href: "https://wmscradio.com/author/schnoora1",
   },
+  {
+    title: "CROSSFADE MAG",
+    href: "https://crossfademag.com/author/ash"
+  }
 ];
 
 const AboutText = () => (
@@ -29,14 +38,14 @@ const AboutText = () => (
       </div>
 
       <p className="text-lg sm:text-xl">
-        i am a freshman film and television major at montclair state university. my aim is to become a live television producer, although i do have a big passion for camera work
+        i am a sophomore film and television major at montclair state university. my aim is to become a live television producer, although i do have a big passion for camera work
       </p>
       <p className="text-lg sm:text-xl">
       </p>
       <p className="text-lg sm:text-xl">
         thank you for taking the time to visit my portfolio :) if youd like to work together in the future,{" "}
         <a
-          href="mailto:me@ashie.lol"
+          href="mailto:photo@ashie.lol"
           className="relative better-underline betterhover:hover:px-1"
         >
           send me an email

@@ -10,7 +10,7 @@ const Footer = () => {
     //   text: "500px",
     // },
     {
-      href: "photo@ashie.lol",
+      href: "mailto:photo@ashie.lol",
       text: "Mail",
     },
   ];

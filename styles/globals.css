@@ -120,45 +120,8 @@ body {
     scrollbar-width: none;  /* Firefox */
   }
 
-  .perspective-2000 {
-    -webkit-perspective: 2000px;
-    -moz-perspective: 2000px;
-    perspective: 2000px;
-  }
-
-  .preserve-3d {
-    -moz-transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-
-  .cube-main {
-    transform: rotateY(0deg) translateZ(-50vh);
-  }
-
-  .cube-top {
-    transform: rotateX(-90deg) translateZ(-50vh);
-  }
-  
-  .cube-bottom {
-    transform: rotateX(90deg) translateZ(-50vh);
-  }
-
-  .cube-left {
-    transform: rotateY(-90deg) translateZ(-50vw);
-  }
-
-  .cube-right {
-    transform: rotateY(-90deg) translateZ(50vw);
-  }
-
   .bg-noise {
     background: url(/images/noise.svg);
-  }
-
-  .metro-focus-states {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   }
 
 }
@@ -212,12 +175,6 @@ body {
     opacity: 1;
     transform: translateY(0px);
   }
-}
-
-
-
-.cube-front {
-  @apply border-2 border-metro z-10 backdrop-blur-sm;
 }
 
 
@@ -286,15 +243,6 @@ body {
   .button {
     @apply flex items-center transition rounded sm:p-4 sm:text-lg text-sm p-2.5 justify-between border uppercase;
   }
-
- .metro-button {
-    @apply inline-flex cursor-pointer select-none whitespace-nowrap items-center justify-center transition outline-none px-2 py-2;
-    box-shadow: 2px 2px #aaa;
-    border: .09rem solid #000;
- }
- .metro-button:hover {
-  box-shadow: 3px 3px #aaa;
- }
 
 }
 

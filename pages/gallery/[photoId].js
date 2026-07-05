@@ -20,9 +20,9 @@ const Gallery = ({ selectedPhoto }) => {
             </Link>
             <NextFutureImage
                 alt=""
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
+                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedPhoto.public_id}`}
                 placeholder="blur"
-                blurDataURL={selectedImage.blurDataURL}
+                blurDataURL={selectedPhoto.blurDataUrl}
                 fill // Ensure fill is set to true
                 className="rounded shadow-md !relative"
                 style={{

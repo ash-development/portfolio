@@ -17,11 +17,11 @@ const Section = ({ className, children }) => {
 export default function Home() {
   return (
     <>
-      <WebPageJsonLd name="ash schnoor" url="https://ashie.lol" />
+      <WebPageJsonLd name="ash schnoor" url="https://ashie.pics" />
       <SocialProfileJsonLd
         type="Person"
         name="ash schnoor"
-        url="https://ashie.lol"
+        url="https://ashie.pics"
         sameAs={[
           "http://instagram.com/underscoreashie",
         ]}

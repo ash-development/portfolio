@@ -1,10 +1,10 @@
-import one from "../../public/images/me/one_Vish.jpg";
-import two from "../../public/images/me/two_canbeV.jpg";
-import three from "../../public/images/me/three.jpg";
-import four from "../../public/images/me/four.jpg";
-import five from "../../public/images/me/five_V.jpg";
-import six from "../../public/images/me/six.jpg";
-import seven from "../../public/images/me/seven.jpg";
+import one from "../../public/images/meNEW/one.jpg";
+import two from "../../public/images/meNEW/two.jpg";
+import three from "../../public/images/meNEW/three.jpg";
+import four from "../../public/images/meNEW/four.jpg";
+import five from "../../public/images/meNEW/five.jpg";
+import six from "../../public/images/meNEW/six.jpg";
+import seven from "../../public/images/meNEW/seven.jpg";
 import eight from "../../public/images/me/eight_V.jpg";
 
 import {
