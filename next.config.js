@@ -31,24 +31,56 @@ module.exports = {
   //experimental: { images: { allowFutureImage: true } },
   async redirects() {
     return [
+      // shortcuts for current categories
       {
         source: "/concerts",
         destination: "/gallery/concerts",
         permanent: true,
       },
       {
+        source: "/acoustic",
+        destination: "/gallery/acoustic",
+        permanent: true,
+      },
+      {
+        source: "/portraits",
+        destination: "/gallery/portraits",
+        permanent: true,
+      },
+      {
+        source: "/scapes",
+        destination: "/gallery/scapes",
+        permanent: true,
+      },
+      // old category names
+      {
         source: "/musical",
-        destination: "/gallery/musical",
+        destination: "/gallery/concerts",
+        permanent: true,
+      },
+      {
+        source: "/gallery/musical",
+        destination: "/gallery/concerts",
         permanent: true,
       },
       {
         source: "/city",
-        destination: "/gallery/city",
+        destination: "/gallery/scapes",
+        permanent: true,
+      },
+      {
+        source: "/gallery/city",
+        destination: "/gallery/scapes",
         permanent: true,
       },
       {
         source: "/nature",
-        destination: "/gallery/nature",
+        destination: "/gallery/scapes",
+        permanent: true,
+      },
+      {
+        source: "/gallery/nature",
+        destination: "/gallery/scapes",
         permanent: true,
       },
     ];
@@ -60,16 +92,16 @@ module.exports = {
         destination: "/gallery?type=concerts",
       },
       {
-        source: "/gallery/musical",
-        destination: "/gallery?type=musical",
+        source: "/gallery/acoustic",
+        destination: "/gallery?type=acoustic",
       },
       {
-        source: "/gallery/city",
-        destination: "/gallery?type=city",
+        source: "/gallery/portraits",
+        destination: "/gallery?type=portraits",
       },
       {
-        source: "/gallery/nature",
-        destination: "/gallery?type=nature",
+        source: "/gallery/scapes",
+        destination: "/gallery?type=scapes",
       },
       {
         source: "/gallery/all",
