@@ -45,7 +45,7 @@ const AboutText = () => (
       <p className="text-lg sm:text-xl">
         thank you for taking the time to visit my portfolio :) if youd like to work together in the future,{" "}
         <a
-          href="mailto:photo@ashie.lol"
+          href="mailto:hey@ashie.pics"
           className="relative better-underline betterhover:hover:px-1"
         >
           send me an email
