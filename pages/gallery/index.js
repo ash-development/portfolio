@@ -6,7 +6,7 @@ import Link from "next/link";
 import cloudinary from "@/utils/cloudinary";
 import getBase64ImageUrl from "@/utils/generateBlurPlaceholder";
 import Masonry from "react-masonry-css";
-import { X } from "phosphor-react";
+import { X, CaretLeft, CaretRight } from "phosphor-react";
 import {
   Dialog,
   DialogOverlay,
@@ -97,7 +97,7 @@ const Gallery = ({ images }) => {
   const [gridImages, setGridImages] = useState(images);
   const [selectedImage, setSelectedImage] = useState({
     public_id: "",
-    format: "",
+    slug: "",
     blurDataURL: "",
     width: 0,
     height: 0,
@@ -106,6 +106,14 @@ const Gallery = ({ images }) => {
   useEffect(() => {
     if (!router.isReady) return;
   }, [router.isReady]);
+
+  const toSelected = (img) => ({
+    public_id: img.public_id,
+    slug: img.slug,
+    blurDataURL: img.blurDataUrl,
+    width: img.width,
+    height: img.height,
+  });
 
   useEffect(() => {
     const shuffledImages = images.sort(() => 0.5 - Math.random());
@@ -130,6 +138,30 @@ const Gallery = ({ images }) => {
       !type || type === "all"
           ? gridImages
           : gridImages.filter((img) => img.tags?.includes(type));
+
+  const stepPhoto = (dir) => {
+    if (!visibleImages.length) return;
+    const idx = visibleImages.findIndex(
+        (img) => img.public_id === selectedImage.public_id
+    );
+    const next =
+        visibleImages[(idx + dir + visibleImages.length) % visibleImages.length];
+    setSelectedImage(toSelected(next));
+    router.replace(`/gallery/?photoId=${next.slug}`, `/gallery/${next.slug}`, {
+      shallow: true,
+      scroll: false,
+    });
+  };
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === "ArrowRight") stepPhoto(1);
+      if (e.key === "ArrowLeft") stepPhoto(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, selectedImage.public_id, type, gridImages]);
 
   return (
       (<main className="relative">
@@ -167,6 +199,20 @@ const Gallery = ({ images }) => {
                           //height: "auto"
                         }} />
                   </div>
+                  <button
+                      onClick={() => stepPhoto(-1)}
+                      aria-label="Previous photo"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 text-white p-2.5 leading-none hover:bg-black transition"
+                  >
+                    <CaretLeft />
+                  </button>
+                  <button
+                      onClick={() => stepPhoto(1)}
+                      aria-label="Next photo"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 text-white p-2.5 leading-none hover:bg-black transition"
+                  >
+                    <CaretRight />
+                  </button>
                   <div className="flex gap-x-2 absolute top-4 right-4">
                     {/* <button>Share</button> */}
                     <DialogClose
@@ -202,11 +248,11 @@ const Gallery = ({ images }) => {
           </div>
 
           {visibleImages.map(
-              ({ id, public_id, format, width, height, blurDataUrl }) => (
+              ({ id, public_id, slug, width, height, blurDataUrl }) => (
                   <AnimatePresence key={id}>
                     <Link
-                        href={`/gallery/?photoId=${id}`}
-                        as={`/gallery/${id}`}
+                        href={`/gallery/?photoId=${slug}`}
+                        as={`/gallery/${slug}`}
                         shallow
                         legacyBehavior>
                       <MotionImage
@@ -223,11 +269,10 @@ const Gallery = ({ images }) => {
                           onClick={() => {
                             setSelectedImage({
                               public_id: public_id,
-                              format: format,
-                              alt: "",
+                              slug: slug,
                               blurDataURL: blurDataUrl,
                               width: width,
-                              //height: height,
+                              height: height,
                             });
                             setOpen(true);
                             //splitbee.track("Open Photo", {
@@ -267,7 +312,7 @@ export async function getStaticProps() {
       height: result.height,
       width: result.width,
       public_id: result.public_id,
-      format: result.format,
+      slug: result.public_id.split("/").pop(),
       tags: result.tags || [],
     });
     i++;

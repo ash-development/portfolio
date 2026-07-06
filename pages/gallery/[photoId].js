@@ -47,14 +47,26 @@ export const getStaticProps = async (context) => {
       id: i,
       width: result.width,
       public_id: result.public_id,
+      slug: result.public_id.split("/").pop(),
       format: result.format,
     });
     i++;
   }
 
-  const selectedPhoto = reducedResults.find(
-      (img) => img.id === Number(context.params.photoId)
-  );
+  const { photoId } = context.params;
+  let selectedPhoto = reducedResults.find((img) => img.slug === photoId);
+  if (!selectedPhoto && /^\d+$/.test(photoId)) {
+    // legacy index-based URLs from before slug routing
+    const legacy = reducedResults[Number(photoId)];
+    if (legacy) {
+      return {
+        redirect: {
+          destination: `/gallery/${legacy.slug}`,
+          permanent: true,
+        },
+      };
+    }
+  }
   if (!selectedPhoto) {
     return { notFound: true, revalidate: 60 };
   }
@@ -76,8 +88,8 @@ export async function getStaticPaths() {
       .execute();
 
   let fullPaths = [];
-  for (let i = 0; i < results.resources.length; i++) {
-    fullPaths.push({ params: { photoId: i.toString() } });
+  for (let result of results.resources) {
+    fullPaths.push({ params: { photoId: result.public_id.split("/").pop() } });
   }
 
   return {
