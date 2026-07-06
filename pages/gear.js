@@ -26,7 +26,7 @@ const gear_data = {
       title: "Canon EOS R50",
       longTitle:
         "Canon EOS R50 4k Mirrorless Interchangeable-Lens Camera",
-      subtitle: "The smallest full-frame camera out there, and it’s perfect.",
+      subtitle: "A tiny APS-C mirrorless that punches well above its weight.",
       description:
         "The EOS R50 camera makes photography fun, simple, and convenient with intuitive photo functions that capture beautiful images automatically, just as you imagine them.",
       href: "https://amzn.to/4fJGEKm",
