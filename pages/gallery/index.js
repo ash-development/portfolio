@@ -239,6 +239,7 @@ const Gallery = ({ images }) => {
                           placeholder="blur"
                           blurDataURL={blurDataUrl}
                           src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${public_id}`}
+                          sizes="(max-width: 500px) 100vw, (max-width: 700px) 50vw, (max-width: 1100px) 33vw, 25vw"
                           width={width}
                           height={height}
                       />
@@ -285,6 +286,7 @@ export async function getStaticProps() {
     props: {
       images: reducedResults,
     },
+    revalidate: 3600,
   };
 }
 
