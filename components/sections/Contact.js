@@ -19,7 +19,7 @@ const NotSure = () => {
           Instagram
         </a>
         <a
-          href="mailto:photo@ashie.lol"
+          href="mailto:hey@ashie.pics"
           target="_blank"
           className="border bg-eggshell rounded px-2 py-1.5 shadow-sm transition betterhover:hover:bg-yolk/20 betterhover:hover:border-yolk betterhover:hover:shadow"
         >
@@ -108,7 +108,7 @@ const ContactDialog = ({ open, onOpenChange, children, ...props }) => {
 };
 
 const Contact = () => {
-  const [value, copy] = useCopyToClipboard("photo@ashie.lol");
+  const [value, copy] = useCopyToClipboard("hey@ashie.pics");
 
   return (
     <>
@@ -131,7 +131,7 @@ const Contact = () => {
               className="sm:py-1.5 text-lg normal-case md:text-2xl"
               onClick={copy}
             >
-              photo<span className="hidden">null</span>@ashie.lol
+              hey<span className="hidden">null</span>@ashie.pics
             </Button>
           </div>
           <div className="flex flex-col justify-end col-span-1 p-6 -mt-10 md:pl-4 md:border-l">

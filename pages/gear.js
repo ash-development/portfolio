@@ -16,8 +16,8 @@ import sony35 from "@/images/gear/sony-35mm-gm.png";
 import Footer from "@/components/sections/Footer";
 import { cx } from "class-variance-authority";
 import r50 from "@/images/ashie/R50.webp";
-import shit from "@/images/ashie/mainlens.webp";
-import fuck from "@/images/ashie/seclens.jpg";
+import mainLens from "@/images/ashie/mainlens.webp";
+import secLens from "@/images/ashie/seclens.jpg";
 
 const gear_data = {
   camera: [
@@ -27,7 +27,6 @@ const gear_data = {
       longTitle:
         "Canon EOS R50 4k Mirrorless Interchangeable-Lens Camera",
       subtitle: "The smallest full-frame camera out there, and it’s perfect.",
-      shortDesc: "Something something something something something something",
       description:
         "The EOS R50 camera makes photography fun, simple, and convenient with intuitive photo functions that capture beautiful images automatically, just as you imagine them.",
       href: "https://amzn.to/4fJGEKm",
@@ -45,7 +44,7 @@ const gear_data = {
       shortDesc:
         "This is amazing for standard, properly lit photography. Most of my pictures taken in 2024 were taken using this lens.",
       href: "https://amzn.to/3CHO6qG",
-      image: shit,
+      image: mainLens,
       imageAlt: "",
       tags: ["Canon", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
     },
@@ -57,7 +56,7 @@ const gear_data = {
       shortDesc:
         "This is my primary lens for concert photography! It captures low-light photos perfectly.",
       href: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.amazon.com/Sigma-24-70mm-Aspherical-Aperture-Standard/dp/B0009E1XF8&ved=2ahUKEwjWwpbJvd2LAxXeEFkFHf8WPLwQFnoECBkQAQ&usg=AOvVaw08NzpBzOs5_BUwp9HSJIar",
-      image: fuck,
+      image: secLens,
       imageAlt: "",
       tags: ["Sony", "Full-Frame", "Mirrorless", "Interchangeable-Lens"],
     },
@@ -176,7 +175,7 @@ const GearItemSmall = ({ image, href, imageAlt, scale, shortDesc, title }) => {
 const Gear = () => {
   return (
     <>
-      <NextSeo title="Gear" canonical="https://ashie.lol/gear" />
+      <NextSeo title="Gear" canonical="https://ashie.pics/gear" />
       <main className="relative h-full pb-20">
         <div className="items-center justify-between md:flex">
           <div className="flex items-center px-6 py-6 md:px-4 gap-x-yeat">

@@ -55,12 +55,16 @@ export const getStaticProps = async (context) => {
   const selectedPhoto = reducedResults.find(
       (img) => img.id === Number(context.params.photoId)
   );
+  if (!selectedPhoto) {
+    return { notFound: true, revalidate: 60 };
+  }
   selectedPhoto.blurDataUrl = await getBase64ImageUrl(selectedPhoto);
 
   return {
     props: {
       selectedPhoto: selectedPhoto,
     },
+    revalidate: 3600,
   };
 };
 
@@ -78,7 +82,7 @@ export async function getStaticPaths() {
 
   return {
     paths: fullPaths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 

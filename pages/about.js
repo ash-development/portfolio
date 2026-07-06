@@ -91,7 +91,7 @@ export default function About() {
 
   return (
     <>
-      <NextSeo title="About" canonical="https://ashie.lol/about" />
+      <NextSeo title="About" canonical="https://ashie.pics/about" />
       <ContactDialog open={open} onOpenChange={setOpen} />
       <main className="relative pb-20">
         <div className="flex items-center px-6 py-6 md:px-4 gap-x-yeat">
