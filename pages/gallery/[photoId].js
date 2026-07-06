@@ -20,7 +20,9 @@ const Gallery = ({ selectedPhoto }) => {
             </Link>
             <NextFutureImage
                 alt=""
-                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedPhoto.public_id}`}
+                src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560,q_auto:good,f_auto/${selectedPhoto.public_id}`}
+                unoptimized
+                loading="eager"
                 placeholder="blur"
                 blurDataURL={selectedPhoto.blurDataUrl}
                 fill // Ensure fill is set to true

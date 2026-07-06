@@ -25,19 +25,24 @@ const FILTERS = [
     filter: "all",
   },
   {
-    title: "musical performances",
-    type: "musical",
-    filter: "musical",
+    title: "concerts",
+    type: "concerts",
+    filter: "concerts",
   },
   {
-    title: "cityscapes",
-    type: "city",
-    filter: "city",
+    title: "acoustic",
+    type: "acoustic",
+    filter: "acoustic",
   },
   {
-    title: "nature",
-    type: "nature",
-    filter: "nature",
+    title: "portraits",
+    type: "portraits",
+    filter: "portraits",
+  },
+  {
+    title: "scapes",
+    type: "scapes",
+    filter: "scapes",
   },
 ];
 
@@ -147,7 +152,9 @@ const Gallery = ({ images }) => {
                   >
                     <NextFutureImage
                         alt=""
-                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${selectedImage.public_id}`}
+                        src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560,q_auto:good,f_auto/${selectedImage.public_id}`}
+                        unoptimized
+                        loading="eager"
                         placeholder="blur"
                         blurDataURL={selectedImage.blurDataURL}
                         //width={selectedImage.width}
